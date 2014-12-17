@@ -18,8 +18,8 @@ if($module=='tamu' AND $act=='register' ){
 	$tll="$_POST[tahun]-$_POST[bulan]-$_POST[hari]";
 	$tm="$_POST[tm]-$_POST[bm]-$_POST[hm]";
 	Uploadfoto($nama_file_unik);
-	mysql_query("insert into tbuser set username='$_POST[username]',
-										 password='$_POST[password]',
+	mysql_query("insert into tbuser set username='$_POST[required2]',
+										 password='$_POST[password2]',
 										 nama_user='$_POST[nama]',
 										 umur='$_POST[umur]',
 										 jk='$_POST[jk]',
@@ -31,8 +31,8 @@ if($module=='tamu' AND $act=='register' ){
 	
 	header('location:../../index.php?module=sukses');
 	} else {
-            mysql_query("insert into tbuser set username='$_POST[username]',
-										 password='$_POST[password]',
+            mysql_query("insert into tbuser set username='$_POST[required2]',
+										 password='$_POST[password2]',
 										 nama_user='$_POST[nama]',
 										 umur='$_POST[umur]',
 										 jk='$_POST[jk]',

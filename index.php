@@ -15,8 +15,6 @@ include "timeout.php";
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="plugins/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 	<link href="plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
 	<link href="plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
 	<link href="plugins/xcharts/xcharts.min.css" rel="stylesheet">
@@ -26,11 +24,12 @@ include "timeout.php";
         <!-- CSS mPurpose Master -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/icomoon-social.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/leaflet.css" />
 	<link rel="stylesheet" href="css/main.css">
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-		</head>
+        
+        <link rel="stylesheet" href="assets/plugins/validationengine/css/validationEngine.jquery.css" /> 
+	</head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -143,10 +142,7 @@ include "timeout.php";
 		    </div>
 	    </div>
         <!-- CSS mPurpose Master -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
         <script src="js/jquery.fitvids.js"></script>
         <script src="js/jquery.sequence-min.js"></script>
         <script src="js/jquery.bxslider.js"></script>
@@ -163,6 +159,14 @@ include "timeout.php";
         <script src="plugins/tinymce/tinymce.min.js"></script>
         <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
         <!-- All functions for this theme + document.ready processing -->
-        <script src="js/devoops.js"></script>
+        <!-- <script src="js/devoops.js"></script> skrip error-->
+        
+        <script src="assets/plugins/validationengine/js/jquery.validationEngine.js"></script>
+    <script src="assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js"></script>
+    <script src="assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>
+    <script src="assets/js/validationInit.js"></script>
+    <script>
+        $(function () { formValidation(); });
+        </script>
     </body>
 </html>

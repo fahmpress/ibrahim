@@ -47,7 +47,7 @@ include "config/fungsi_nip.php";
                         include "modul/tamu/carapengajuan.php";
                         }
                             else if($_GET['module']=="objeklist"){
-                            include "modul/tamu/objeklist.php";
+                            include "modul/user/objeklist.php";
                             }
                                 else if($_GET['module']=="tagihan"){
                                 include "modul/usr/user";
