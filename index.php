@@ -11,19 +11,25 @@ include "timeout.php";
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
+        <!-- CSS devoops -->
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="plugins/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+	<link href="plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<link href="plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+	<link href="plugins/xcharts/xcharts.min.css" rel="stylesheet">
+	<link href="plugins/select2/select2.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+                
+        <!-- CSS mPurpose Master -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/icomoon-social.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
-		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/theme.css" />
-		<link rel="stylesheet" href="assets/css/MoneAdmin.css" />
-		<link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
-		<link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css" />
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/leaflet.css" />
+        <link rel="stylesheet" href="css/leaflet.css" />
+	<link rel="stylesheet" href="css/main.css">
+        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		</head>
     <body>
         <!--[if lt IE 7]>
@@ -136,8 +142,7 @@ include "timeout.php";
 		    	</div>
 		    </div>
 	    </div>
-
-        <!-- Javascripts -->
+        <!-- CSS mPurpose Master -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
@@ -147,8 +152,17 @@ include "timeout.php";
         <script src="js/jquery.bxslider.js"></script>
         <script src="js/main-menu.js"></script>
         <script src="js/template.js"></script>
-		<script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
-		<script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
+        
+        <!-- Script devoops -->
+        <!-- Javascripts -->
+        <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
+        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="plugins/bootstrap/bootstrap.min.js"></script>
+        <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
+        <script src="plugins/tinymce/tinymce.min.js"></script>
+        <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
+        <!-- All functions for this theme + document.ready processing -->
+        <script src="js/devoops.js"></script>
     </body>
 </html>
