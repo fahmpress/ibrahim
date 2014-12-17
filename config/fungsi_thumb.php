@@ -2,7 +2,7 @@
 
 function Uploadfoto($fupload_name){
   //direktori gambar
-  $vdir_upload = "../../img/user/";
+  $vdir_upload = "../../img_user/";
   $vfile_upload = $vdir_upload . $fupload_name;
 
   //Simpan gambar dalam ukuran sebenarnya

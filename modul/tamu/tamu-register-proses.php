@@ -7,7 +7,6 @@ include "../../config/fungsi_thumb.php";
 
 $module=$_GET['module'];
 $act=$_GET['act'];
-$fupload = isset($_POST['fupload']); 
 
 if($module=='tamu' AND $act=='register' ){ 
   $lokasi_file    = $_FILES['fupload']['tmp_name'];
@@ -30,7 +29,7 @@ if($module=='tamu' AND $act=='register' ){
 										 foto='$nama_file_unik'
 										 ");
 	
-	echo "input sukses";
+	header('location:../../index.php?module=sukses');
 	} else {
             mysql_query("insert into tbuser set username='$_POST[username]',
 										 password='$_POST[password]',
@@ -41,5 +40,6 @@ if($module=='tamu' AND $act=='register' ){
 										 email='$_POST[email]',
 										 nope='$_POST[nope]',
 										 ");
+        header('location:../../index.php?module=sukses');
 }
 }

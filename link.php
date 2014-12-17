@@ -81,6 +81,9 @@ include "config/fungsi_nip.php";
                                     else if($_GET['module']=="pengajuan"){
                                     include "404.php";
                                     }
+                                        else if($_GET['module']=="sukses"){
+                                        include "modul/tamu/register-sukses.php";
+                                        }
                             
                     
                     

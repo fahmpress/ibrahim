@@ -36,7 +36,7 @@
 					<div class="col-sm-5">
 					<h4>Atau register jika belum mempunyai akun</h4><br>
 						<div class="basic-login">
-                                                    <form role="form" method="post" action="modul/tamu/tamu-register-proses.php?module=tamu&act=register">
+                                                    <form role="form" method="post" action="modul/tamu/tamu-register-proses.php?module=tamu&act=register" enctype='multipart/form-data' class='f-r'>
 								<div class="form-group">
 		        				 	<label for="register-username"><i class="fa fa-user"></i> <b>Username</b></label>
 									<input class="form-control" name="username" id="register-username" type="text" placeholder="">
@@ -74,20 +74,10 @@
 		        				 	<label for="register-username"><i class="fa fa-phone"></i> <b>No Tlp/HP</b></label>
 									<input class="form-control" name="nope" id="register-username" type="text" placeholder="">
                                                                 </div>
-                                                               <div class="form-group">
-                        <label class="control-label col-lg-4"><i class="fa fa-photo"></i> Foto</label>
-                        <div class="col-lg-8">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="assets/img/demoUpload.jpg" alt="" /></div>
-                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                <div>
-                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Pilih foto</span><span class="fileupload-exists">Ganti</span><input name="fupload" type="file" /></span>
-                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-																
+                                                                <div class="form-group">
+		        				 	<label for="register-username"><i class="fa fa-image"></i> <b>Foto</b></label>
+									<input name='fupload' type='file' />
+                                                                </div>
                                                                 <div class="form-group">
 									<button type="submit" class="btn pull-right">Register</button>
 									<div class="clearfix"></div>
