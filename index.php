@@ -7,28 +7,20 @@ include "timeout.php";
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Web Pengajuan Wisata</title>
-        <link rel="shortcut icon" href="img/poltek.png" >
+        <link rel="shortcut icon" href="img/logosmi.png" >
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        
-        <!-- CSS devoops -->
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="plugins/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-	<link href="plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
-	<link href="plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
-	<link href="plugins/xcharts/xcharts.min.css" rel="stylesheet">
-	<link href="plugins/select2/select2.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-                
+                        
         <!-- CSS mPurpose Master -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/icomoon-social.css">
         <link rel="stylesheet" href="css/leaflet.css" />
 	<link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         
-        <link rel="stylesheet" href="assets/plugins/validationengine/css/validationEngine.jquery.css" /> 
+        <link rel="stylesheet" href="assets/plugins/validationengine/css/validationEngine.jquery.css" />
 	</head>
     <body>
         <!--[if lt IE 7]>
@@ -53,22 +45,21 @@ include "timeout.php";
 								</div>
 							</li>
                                                         <?php if ($_SESSION['level']==null){
-                                                            echo "<li><a href='index.php?module=login'>Login</a></li>";
+                                                            echo "<li><a href='index.php?module=login' data-toggle='modal'>Login | </a><a href='index.php?module=register'>Daftar</a></li>";
                                                         } else {
                                                             echo "<li><a href='logout2.php'>Logout</a></li>";
                                                         } 
                                                         ?>
-                                                        
-                                                        
-			        	</ul>
+                                                   </ul>
 					</div>
-		        </div>
+                        </div>
+		        
 		        <nav id="mainmenu" class="mainmenu">
 					
                                         <?php if ($_SESSION['level']==null){ ?>
                                         <ul>
                                             <li class="logo-wrapper"><a href="index.php"><img src="img/web-logo.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
-						<li>
+						<li class="active">
                                                         <a href="index.php">Home</a>
 						</li>
 						<li>
@@ -99,8 +90,11 @@ include "timeout.php";
                                                 <li>
 							<a href="index.php?module=objeklist">Objek Wisata</a>
 						</li>
+                                                <li>
+							<a href="index.php?module=pengajuan">Pengajuan</a>
+						</li>
                                                 <li class="has-submenu">
-                                                    <a href="#"><?php echo "$_SESSION[nama]";?> <i class="fa fa-angle-double-down"></i> </a>
+                                                    <a href="#">Menu Saya <i class="fa fa-angle-double-down"></i> </a>
 							<div class="mainmenu-submenu">
 								<div class="mainmenu-submenu-inner"> 
 									<div>
@@ -120,12 +114,14 @@ include "timeout.php";
                                                                 </div>
                                                         </div>
 						</li>
+                                                
 					</ul>
 				
                                         <?php } ?>
                                 </nav>
 			</div>
-		</div>
+        </div>
+		
         <?php
         
             include "link.php";
@@ -142,30 +138,22 @@ include "timeout.php";
 		    </div>
 	    </div>
         <!-- CSS mPurpose Master -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
         <script src="js/jquery.fitvids.js"></script>
         <script src="js/jquery.sequence-min.js"></script>
         <script src="js/jquery.bxslider.js"></script>
         <script src="js/main-menu.js"></script>
         <script src="js/template.js"></script>
         
-        <!-- Script devoops -->
-        <!-- Javascripts -->
-        <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
-        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="plugins/bootstrap/bootstrap.min.js"></script>
-        <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
-        <script src="plugins/tinymce/tinymce.min.js"></script>
-        <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
-        <!-- All functions for this theme + document.ready processing -->
-        <!-- <script src="js/devoops.js"></script> skrip error-->
-        
+        <!-- Script bs-core-admin -->
         <script src="assets/plugins/validationengine/js/jquery.validationEngine.js"></script>
-    <script src="assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js"></script>
-    <script src="assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>
-    <script src="assets/js/validationInit.js"></script>
-    <script>
+        <script src="assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js"></script>
+        <script src="assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>
+        <script src="assets/js/validationInit.js"></script>
+        <script>
         $(function () { formValidation(); });
         </script>
     </body>

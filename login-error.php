@@ -16,6 +16,7 @@
         <![endif]-->
     <!-- GLOBAL STYLES -->
   <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
     <!--END GLOBAL STYLES -->

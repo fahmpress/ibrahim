@@ -76,7 +76,7 @@ include "config/fungsi_nip.php";
                             include "modul/tamu/objekdetail.php";
                             }
                                 else if($_GET['module']=="register"){
-                                include "modul/tamu/register.php";
+                                include "modul/tamu/tamu-register.php";
                                 }
                                     else if($_GET['module']=="pengajuan"){
                                     include "404.php";

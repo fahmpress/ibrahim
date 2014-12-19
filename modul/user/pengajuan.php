@@ -129,7 +129,7 @@ include "index.php?module=login";
                                                                 </div>
 								<div class="form-group">
 									<div class="col-sm-12">
-										<button type="submit" class="btn pull-right">Send</button>
+										<button type="submit" class="btn pull-right">Ajukan</button>
 									</div>
 								</div>
 		        			</form>

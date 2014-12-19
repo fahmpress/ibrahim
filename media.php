@@ -7,23 +7,18 @@ include "timeout.php";
     <head>
         <meta charset="UTF-8" />
         <title>Web Pengajuan Wisata</title>
+        <link rel="shortcut icon" href="img/logosmi.png" >
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content="" name="description" />
         <meta content="" name="author" />
-        <!-- CSS devoops -->
-        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="plugins/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
-	<link href="plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
-	<link href="plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
-	<link href="plugins/xcharts/xcharts.min.css" rel="stylesheet">
-	<link href="plugins/select2/select2.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+        <!-- CSS  bs-admin-bcore -->
+        <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/theme.css" />
+        <link rel="stylesheet" href="assets/css/MoneAdmin.css" />
+        <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
     </head>
     <body class="padTop53 " >
-        <link rel="shortcut icon" href="img/poltek.png" >
         <div id="wrap">
         
         <!-- HEADER SECTION -->
@@ -34,8 +29,8 @@ include "timeout.php";
                 </a>
                 <!-- LOGO SECTION -->
                 <header class="navbar-header">
-                    <a href="index.html" class="navbar-brand">
-                    <img src="assets/img/logo2.png" alt="" /></a>
+                    <a href="media.php?module=adm" class="navbar-brand">
+                        <img src="img/web-logo.png" alt="" /></a>
                 </header>
                 <!-- END LOGO SECTION -->
             <ul class="nav navbar-top-links navbar-right">
@@ -61,7 +56,7 @@ include "timeout.php";
         <div id="left">
             <div class="media user-media well-small">
                 <a class="user-link" href="#">
-                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="<?php echo"$_SESSION[foto]";?>"/>
+                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="img_user/small_<?php echo"$_SESSION[foto]";?>"/>
                 </a>
                 <br />
             <div class="media-body">
@@ -159,16 +154,10 @@ include "timeout.php";
         <p>&copy;  binarytheme &nbsp;2014 &nbsp;</p>
     </div>
     <!--END FOOTER -->
-    <!-- Script devoops -->
+    <!-- Script bs-admin-bcore  -->
         <!-- Javascripts -->
-        <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
-        <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="plugins/bootstrap/bootstrap.min.js"></script>
-        <script src="plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
-        <script src="plugins/tinymce/tinymce.min.js"></script>
-        <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
-        <!-- All functions for this theme + document.ready processing -->
-        <script src="js/devoops.js"></script>
+    <script src="assets/plugins/jquery-2.0.3.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </body>
 </html>

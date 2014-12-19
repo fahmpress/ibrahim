@@ -1,8 +1,8 @@
 <?php
 include "config/koneksi.php";
 
-$user = $_POST['username'];
-$pass = $_POST['password'];
+$user = $_POST['required2'];
+$pass = $_POST['password2'];
 
 // pastikan username dan password adalah berupa huruf atau angka.
 $login=mysql_query("select * from tbuser where username='$user' AND password='$pass'");
@@ -24,8 +24,8 @@ if ($ketemu > 0){
 	header('location:media.php?module=adm');
   } else if($_SESSION[level]==2){
 	header('location:media.php?module=adt');
-  } if($_SESSION[level]==3){
-	header('location:index.php?module=usr');
+  } else {
+	header('location:login-error.php');
   }
 }
 else{
