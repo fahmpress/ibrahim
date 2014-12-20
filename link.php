@@ -50,7 +50,7 @@ include "config/fungsi_nip.php";
                             include "modul/user/objeklist.php";
                             }
                                 else if($_GET['module']=="tagihan"){
-                                include "modul/user/user";
+                                include "modul/user/tagihan.php";
                                 }
                                     else if($_GET['module']=="sukses"){
                                     include "modul/user/pengajuan-sukses.php";
@@ -58,7 +58,12 @@ include "config/fungsi_nip.php";
                                         else if($_GET['module']=="tentang"){
                                         include "modul/tamu/tentangsmi.php";
                                         }
-                                        
+                                            else if($_GET['module']=="konfirm"){
+                                            include "modul/user/sukses-konfirm.php";
+                                            }
+                                                else if($_GET['module']=="objeklist2"){
+                                                include "modul/user/objeklist2.php";
+                                                }
                      
                        
     } 

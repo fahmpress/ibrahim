@@ -38,14 +38,12 @@
 									<input class="form-control" name="umur" id="register-username" type="text" placeholder="">
 								</div>
                                                                 <div class="form-group">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Gender</b></label>
-									<div class="col-sm-9">
-                                                                            <select class="form-control" id="prependedInput" name="jk">
+                                                                    <label for="Name"><i class="fa fa-female"></i> <b>Gender</b></label>
+									<select class="form-control" id="prependedInput" name="jk">
 											<option></option>
 											<option value="Laki-laki">Laki-laki</option>
 											<option value="Perempuan">Perempuan</option>
 										</select>
-									</div>
 								</div>
                                                                 <div class="form-group">
 		        				 	<label for="register-username"><i class="fa fa-map-marker"></i> <b>Alamat</b></label>

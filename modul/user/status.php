@@ -40,7 +40,7 @@ $data=mysql_fetch_array($ambil);
 							<li><b>Paket:</b> <?php echo $data[nama_paket] ?></li>
 							<li><b>Waktu Pengajuan:</b> <?php echo $data[waktu_pengajuan] ?></li>
                                                         <li><b>Waktu Penerimaan:</b> <?php echo $data[waktu_penerimaan]?></li>
-							<li class="portfolio-visit-btn"><a href="#" class="btn">Lihat status pembayaran</a></li>
+							<li class="portfolio-visit-btn"><a href="index.php?module=tagihan" class="btn">Lihat status pembayaran</a></li>
 						</ul>
 					</div>
 					<!-- End Project Info Column -->

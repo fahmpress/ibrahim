@@ -106,7 +106,7 @@ include "timeout.php";
 										<h4>Pengajuan</h4>
 										<ul>
                                                                                     <li><a href="index.php?module=status"><i class="fa fa-file-text"></i> Pengajuan Saya</a></li>
-											<li><a href="#"><i class="fa fa-shopping-cart"></i> Tagihan</a></li>
+											<li><a href="index.php?module=tagihan"><i class="fa fa-shopping-cart"></i> Tagihan</a></li>
 										</ul>
                                                                         </div>
                                                                         <div>

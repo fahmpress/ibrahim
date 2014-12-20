@@ -27,12 +27,12 @@ $iduser=$_SESSION['id'];
                                         <h3><i class="fa fa-shopping-cart fa-lg"></i> Daftar Paket Pengajuan Objek Wisata</h3>    
 	        			<div class="pricing-wrapper">
                                                         <div class="pricing-plan">
-								<h2 class="pricing-plan-title">Trial</h2>
-								<div class="pricing-plan-price">FREE</div>
+								<h2 class="pricing-plan-title">Beginner</h2>
+								<div class="pricing-plan-price"><span>Rp.</span> 150K</div>
 								<!-- Pricing Plan Features -->
 								<ul class="pricing-plan-features">
 									<li><strong>Iklan online</strong> 1 Bln</li>
-									<li><strong>Galery</strong> 2 Foto</li>
+									<li><strong>Galery</strong> 6 Foto</li>
 									<li><strong>Support</strong> 3 Hari kerja</li>
 								</ul>
 							</div>
@@ -45,7 +45,7 @@ $iduser=$_SESSION['id'];
 								<!-- Pricing Plan Features -->
 								<ul class="pricing-plan-features">
 									<li><strong>Iklan online</strong> 6 Bln</li>
-									<li><strong>Galery</strong> 3 Foto</li>
+									<li><strong>Galery</strong> 6 Foto</li>
 									<li><strong>Support</strong> 3 Hari kerja</li>
 								</ul>
 							</div>
@@ -82,15 +82,15 @@ $iduser=$_SESSION['id'];
                                                     <form role="form" method="post" action="modul/user/pengajuan-proses.php?module=user&act=pengajuan" enctype='multipart/form-data' class='f-r'>
 								
                                                                 <div class="form-group">
-		        				 	<label for="register-username"><i class="fa fa-credit-card"></i> <b>Nama User</b></label>
+		        				 	<label for="register-username"><b>Nama User</b></label>
                                                                 <input class="form-control" <?php echo "value='$nama'" ?> type="text" placeholder="" disabled="true">
 								</div>
                                                                 <div class="form-group">
-		        				 	<label for="register-username"><i class="fa fa-warning"></i> <b>Nama Wisata</b></label>
+		        				 	<label for="register-username"> <b>Nama Wisata</b></label>
 									<input class="form-control" name="n_wisata" type="text" placeholder="">
 								</div>
                                                                 <div class="form-group">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Kategori</b></label>
+                                                                    <label for="Name"><b>Kategori</b></label>
                                                                             <select class="form-control" id="prependedInput" name="kategori">
 											<option>Pilih kategori..</option>
 											<?php
@@ -103,15 +103,15 @@ $iduser=$_SESSION['id'];
 										</select>
 								</div>
                                                                 <div class="form-group">
-		        				 	<label for="register-username"><i class="fa fa-map-marker"></i> <b>Alamat</b></label>
+		        				 	<label for="register-username"><b>Alamat</b></label>
 									<input class="form-control" name="alamat" type="text" placeholder="">
                                                                 </div>
                                                                 <div class="form-group">
-		        				 	<label for="register-username"><i class="fa fa-envelope"></i> <b>Deskripsi</b></label>
+		        				 	<label for="register-username"><b>Deskripsi</b></label>
 									<input class="form-control" name="desc" type="text" placeholder="">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Paket</b></label>
+                                                                    <label for="Name"><b>Paket</b></label>
                                                                             <select class="form-control" name="paket">
 											<option>Pilih paket..</option>
 											<?php
@@ -123,7 +123,7 @@ $iduser=$_SESSION['id'];
 										</select>
 								</div>
                                                                 <div class="form-group">
-		        				 	<label for="register-username"><i class="fa fa-image"></i> <b>Foto</b></label>
+		        				 	<label for="register-username"><b>Foto</b></label>
 									<input name='fupload' type='file' />
                                                                 </div>
                                                                 <div class="form-group">
