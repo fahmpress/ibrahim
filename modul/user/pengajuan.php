@@ -1,9 +1,12 @@
 <?php
+include "../../config/koneksi.php";
 session_start();
 //periksa apakah user telah login atau memiliki session
 if(!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 include "index.php?module=login";
 } else {} 
+$nama=$_SESSION['nama'];
+$iduser=$_SESSION['id'];
 ?>
 <div class="section section-breadcrumbs">
 			<div class="container">
@@ -71,70 +74,68 @@ include "index.php?module=login";
                                         </div>
                                     </div>
                                     
-                                    <div class="col-sm-5 col-sm-offset-0">
-                                        <h3><i class="fa fa-file-text"></i> Form Pengajuan</h3><br>
-	        			<div class="contact-form-wrapper">
-		        			<form class="form-horizontal" role="form" action="test.php">
-		        				 <div class="form-group">
-		        				 	<label for="Name" class="col-sm-3 control-label"><b>Your name</b></label>
-		        				 	<div class="col-sm-9">
-										<input class="form-control" id="Name" type="text" placeholder="">
-									</div>
+                                    
+                                    <div class="row">
+					<div class="col-sm-5 ">
+					<h4>Silahkan isi form registrasi dengan benar</h4><br>
+						<div class="basic-login">
+                                                    <form role="form" method="post" action="modul/user/pengajuan-proses.php?module=user&act=pengajuan" enctype='multipart/form-data' class='f-r'>
+								
+                                                                <div class="form-group">
+		        				 	<label for="register-username"><i class="fa fa-credit-card"></i> <b>Nama User</b></label>
+                                                                <input class="form-control" <?php echo "value='$nama'" ?> type="text" placeholder="" disabled="true">
 								</div>
-								<div class="form-group">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Judul Wisata</b></label>
-									<div class="col-sm-9">
-                                                                                <input class="form-control" id="contact-email" type="text" placeholder="">
-									</div>
+                                                                <div class="form-group">
+		        				 	<label for="register-username"><i class="fa fa-warning"></i> <b>Nama Wisata</b></label>
+									<input class="form-control" name="n_wisata" type="text" placeholder="">
 								</div>
-								<div class="form-group">
+                                                                <div class="form-group">
                                                                     <label for="Name" class="col-sm-3 control-label"><b>Kategori</b></label>
-									<div class="col-sm-9">
-                                                                            <select class="form-control" id="prependedInput">
-											<option>Pilih Kategori...</option>
-											<option>Kuliner</option>
-											<option>Situs Sejarah</option>
-											<option>Bahari</option>
+                                                                            <select class="form-control" id="prependedInput" name="kategori">
+											<option>Pilih kategori..</option>
+											<?php
+                                                                                $kategori=mysql_query("select * from tbkategori");
+                                                                                while($hasil=mysql_fetch_array($kategori)){
+                                                                                echo "<option value='$hasil[idkategori]'>$hasil[nama_kategori]</option>";
+                                                                                }
+                                                                                ?>
+
 										</select>
-									</div>
 								</div>
                                                                 <div class="form-group">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Alamat</b></label>
-									<div class="col-sm-9">
-                                                                            <input class="form-control" id="contact-email" type="text" placeholder="">
-									</div>
-								</div>
-                                                                <div class="form-">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Foto</b></label>
-									<div class="col-sm-9">
-                                                                            <input type="file" placeholder="Foto">
-                                                                        </div><br><br>
-								</div>
-								<div class="form-group">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Profile</b></label>
-									<div class="col-sm-9">
-										<textarea class="form-control" rows="5" id="contact-message"></textarea>
-									</div>
-								</div>
-                                                                <div class="form-group">
-                                                                    <label for="Name" class="col-sm-3 control-label"><b>Paket Bayar</b></label>
-									<div class="col-sm-9">
-                                                                            <select class="form-control" id="prependedInput">
-											<option>Pilih paket...</option>
-											<option>Paket 6 bln</option>
-											<option>Paket 1 thn</option>
-											<option>Paket 3 thn</option>
-										</select>
-									</div>
+		        				 	<label for="register-username"><i class="fa fa-map-marker"></i> <b>Alamat</b></label>
+									<input class="form-control" name="alamat" type="text" placeholder="">
                                                                 </div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<button type="submit" class="btn pull-right">Ajukan</button>
-									</div>
+                                                                <div class="form-group">
+		        				 	<label for="register-username"><i class="fa fa-envelope"></i> <b>Deskripsi</b></label>
+									<input class="form-control" name="desc" type="text" placeholder="">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="Name" class="col-sm-3 control-label"><b>Paket</b></label>
+                                                                            <select class="form-control" name="paket">
+											<option>Pilih paket..</option>
+											<?php
+                                                                                $paket=mysql_query("select * from tbpaket");
+                                                                                while($hasil=mysql_fetch_array($paket)){
+                                                                                echo "<option value='$hasil[idpaket]'>$hasil[nama_paket]</option>";
+                                                                                }
+                                                                                ?>
+										</select>
 								</div>
-		        			</form>
-		        		</div>
-                                    </div>
+                                                                <div class="form-group">
+		        				 	<label for="register-username"><i class="fa fa-image"></i> <b>Foto</b></label>
+									<input name='fupload' type='file' />
+                                                                </div>
+                                                                <div class="form-group">
+									<button type="submit" class="btn pull-right">Ajukan</button>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+                                    
                             </div>
                 </div>
         </div>

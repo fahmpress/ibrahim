@@ -45,7 +45,7 @@ include "timeout.php";
 								</div>
 							</li>
                                                         <?php if ($_SESSION['level']==null){
-                                                            echo "<li><a href='index.php?module=login' data-toggle='modal'>Login | </a><a href='index.php?module=register'>Daftar</a></li>";
+                                                            echo "<li><a href='index.php?module=register' data-toggle='modal'>Daftar | </a><a href='index.php?module=login'>Login</a></li>";
                                                         } else {
                                                             echo "<li><a href='logout2.php'>Logout</a></li>";
                                                         } 
@@ -59,7 +59,7 @@ include "timeout.php";
                                         <?php if ($_SESSION['level']==null){ ?>
                                         <ul>
                                             <li class="logo-wrapper"><a href="index.php"><img src="img/web-logo.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
-						<li class="active">
+						<li>
                                                         <a href="index.php">Home</a>
 						</li>
 						<li>

@@ -21,19 +21,22 @@ $noPage = $_GET['page'];
 else $noPage = 1;
 // perhitungan offset
 $offset = ($noPage - 1) * $dataPerPage;
-                    $tampil=mysql_query("select * from tbuser order by iduser ASC LIMIT $offset, $dataPerPage");
+                    $tampil=mysql_query("select * from tbpengajuan order by idpengajuan ASC LIMIT $offset, $dataPerPage");
                     $no=1;
                     while($dt=mysql_fetch_array($tampil)){
                         echo    "<div class='row service-wrapper-row'>
         			<div class='col-sm-4'>
         				<div class='service-image'>
-        					<img src='img_user/$dt[foto]' alt='Service Name'>
+        					<img src='img_objekwisata/$dt[foto]' alt='Service Name'>
         				</div>
         			</div>
         			<div class='col-sm-8'>
-    					<h3>$dt[nama_user]</h3>
+    					<h3>$dt[nama_wisata]</h3>
     					<p>
-    					$dt[foto]	
+    					<strong>Deskripsi : </strong>$dt[deskripsi]	
+                                        </p>
+                                        <p>
+    					<strong>Alamat : </strong>$dt[alamat_wisata]	
                                         </p>
                                         <a href='index.php?module=detail' class='btn'>Lihat selengkapnya</a>
     				</div>

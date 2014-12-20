@@ -38,7 +38,7 @@ if($module=='tamu' AND $act=='register' ){
 										 jk='$_POST[jk]',
 										 alamat='$_POST[alamat]',
 										 email='$_POST[email]',
-										 nope='$_POST[nope]',
+										 nope='$_POST[nope]'
 										 ");
         header('location:../../index.php?module=sukses');
 }
