@@ -3,4 +3,4 @@ ibrahim
 
 PHP | TA | Ibrahim
 
-Bootsrap template from DevOOPS || mPurpose Master
+Bootsrap template from bs-admin-bcore || mPurpose Master
