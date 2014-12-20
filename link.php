@@ -34,8 +34,8 @@ include "config/fungsi_nip.php";
         if($_GET['module']=="usr"){
 	include "modul/user/user.php";
 	}
-            else if($_GET['module']=="laporan"){
-            include "laporan.php";
+            else if($_GET['module']=="status"){
+            include "modul/user/status.php";
             }
                 else if($_GET['module']=="laporan"){
                 include "laporan.php";
@@ -55,6 +55,7 @@ include "config/fungsi_nip.php";
                                     else if($_GET['module']=="sukses"){
                                     include "modul/user/pengajuan-sukses.php";
                                     }
+                                        
                      
                        
     } 
