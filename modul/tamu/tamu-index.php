@@ -8,11 +8,11 @@
 						<!-- Slide Text -->
 						<h3 class="subtitle">Anda suka dengan olahraga dengan Adrenalin tinggi? disini tempatnya..</h3>
 						<!-- Slide Image -->
-                                                <img class="slide-img" src="img/homepage-slider/slide3-riamjeram.PNG" alt="Slide 3" />
+                                                <img class="slide-img" src="img/homepage-slider/slide3-riamjeram.PNG" alt="Slide 1" />
 					</li>
 					<!-- End Slide 1 -->
 					<!-- Slide 2 -->
-					<li class="bg3">
+					<li class="bg2">
 						<!-- Slide Title -->
 						<h2 class="title"><a href="index.php?modul=wisata">Curug Kembar</a></h2>
 						<!-- Slide Text -->
@@ -22,13 +22,13 @@
 					</li>
 					<!-- End Slide 2 -->
 					<!-- Slide 3 -->
-					<li class="bg4">
+					<li class="bg3">
 						<!-- Slide Title -->
                                                 <h2 class="title"><a href="index.php?modul=wisata">Goa Buni Ayu</a></h2>
 						<!-- Slide Text -->
 						<h3 class="subtitle">Ekspedisi ke Goa Buni Ayu yang eksotis dan bernilai sejarah ini akan menjadi pengalaman yang tidak akan pernah terlupakan!</h3>
 						<!-- Slide Image -->
-                                                <img class="slide-img" src="img/homepage-slider/slide1-buniayu.PNG" alt="Slide 1" />
+                                                <img class="slide-img" src="img/homepage-slider/slide1-buniayu.PNG" alt="Slide 3" />
 					</li>
                                         <!-- End Slide 3 -->
 				</ul>

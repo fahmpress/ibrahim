@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 20, 2014 at 04:02 AM
+-- Generation Time: Dec 20, 2014 at 07:53 AM
 -- Server version: 5.5.39
 -- PHP Version: 5.4.31
 
@@ -96,15 +96,17 @@ CREATE TABLE IF NOT EXISTS `tbpengajuan` (
   `status` varchar(20) NOT NULL DEFAULT 'Pending',
   `keterangan` varchar(100) NOT NULL,
   `idpaket` varchar(5) NOT NULL,
+  `waktu_pengajuan` varchar(20) NOT NULL DEFAULT '-',
+  `waktu_penerimaan` varchar(20) NOT NULL DEFAULT '-',
   `rating` int(10) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10000026 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10000033 ;
 
 --
 -- Dumping data for table `tbpengajuan`
 --
 
-INSERT INTO `tbpengajuan` (`idpengajuan`, `iduser`, `nama_wisata`, `idkategori`, `alamat_wisata`, `foto`, `deskripsi`, `status`, `keterangan`, `idpaket`, `rating`) VALUES
-(10000023, 10020, 'Curug Bibijilan', 'K002', 'Nyalindung Kabupaten Sukabumi', '613674Curug-Cicurug-Tempat-Wisata-di-Sukabumi.jpg', 'Indah bangedd lho!!!', 'Pending', '', 'P002', 0);
+INSERT INTO `tbpengajuan` (`idpengajuan`, `iduser`, `nama_wisata`, `idkategori`, `alamat_wisata`, `foto`, `deskripsi`, `status`, `keterangan`, `idpaket`, `waktu_pengajuan`, `waktu_penerimaan`, `rating`) VALUES
+(10000023, 10020, 'Curug Bibijilan', 'K002', 'Nyalindung Kabupaten Sukabumi', '613674Curug-Cicurug-Tempat-Wisata-di-Sukabumi.jpg', 'Indah bangedd lho!!!', 'Pending', '', 'P002', '2014-12-20 | 07:37:1', '-', 0);
 
 -- --------------------------------------------------------
 
@@ -175,7 +177,7 @@ ALTER TABLE `tbuser`
 -- AUTO_INCREMENT for table `tbpengajuan`
 --
 ALTER TABLE `tbpengajuan`
-MODIFY `idpengajuan` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10000026;
+MODIFY `idpengajuan` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10000033;
 --
 -- AUTO_INCREMENT for table `tbuser`
 --
