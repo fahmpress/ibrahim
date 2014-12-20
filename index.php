@@ -83,7 +83,12 @@ include "timeout.php";
                             
                                         <ul>
                                             <li class="logo-wrapper"><a href="index.php?module=usr"><img src="img/web-logo.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
-						
+						<li>
+                                                        <a href="index.php?module=usr">Home</a>
+						</li>
+						<li>
+							<a href="index.php?module=tentang">Sukabumi</a>
+						</li>
 						<li>
 							<a href="index.php?module=howto">How To</a>
 						</li>

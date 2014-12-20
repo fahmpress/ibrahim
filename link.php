@@ -55,6 +55,9 @@ include "config/fungsi_nip.php";
                                     else if($_GET['module']=="sukses"){
                                     include "modul/user/pengajuan-sukses.php";
                                     }
+                                        else if($_GET['module']=="tentang"){
+                                        include "modul/tamu/tentangsmi.php";
+                                        }
                                         
                      
                        
