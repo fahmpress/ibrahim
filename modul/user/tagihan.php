@@ -20,50 +20,87 @@ $idpengajuan=$data[idpengajuan];
 			</div>
 		</div>
 
-        <div class="section">
+       <div class="section">
 	    	<div class="container">
-				<div class="row">
-                                    <div class="col-sm-6">
-					
-                                        <?php 
-                                        $ambil2=mysql_query("select * from tbbayar where idpengajuan='$idpengajuan'");
-                                        $data2=mysql_fetch_array($ambil2);
-                                        $konfirmasi=$data2[konfirm_admin];
-                                        if($konfirmasi=='Pending'){ ?>
-                                        <h4>Pembayaran anda menunggu konfirmasi Admin</h4><br>
-                                        <?php }
-                                        if($konfirmasi=='Lunas'){
-                                        ?>
-                                        <h4>Tidak ada daftar tagihan saat ini (LUNAS)</h4><br>
-                                        <?php } 
-                                        if($konfirmasi==null ){
-                                        ?>
-                                            <h4>Konfirmasi pembayaran</h4><br>
-						<div class="basic-login">
-                                                    <form role="form" method="post" action="modul/user/tagihan-proses.php?module=user&act=konfirmasi" id="block-validate" enctype='multipart/form-data' class='f-r'>
-                                                                <div class="form-group">
-		        				 	<label for="register-password"><b>ID Pengajuan</b></label>
-                                                                        <input class="form-control" id="required2" name="idpengajuan" <?php echo "value='$idpengajuan'" ?>type="text" placeholder="" readOnly="true">
-								</div>
-                                                                <div class="form-group">
-		        				 	<label for="register-password"><b>Tanggal Pembayaran</b></label>
-									<input class="form-control" id="required2" name="required2" type="text" placeholder="dd-mm-yyyy">
-								</div>
-								<div class="form-group">
-		        				 	<label for="register-password2"><b>Rekening User</b></label>
-									<input class="form-control" id="password2" name="password2" type="text" placeholder="Bank Abc No. Rek. 12345 a/n Xyz">
-								</div>
-                                                                <div class="form-group">
-									<button type="submit" class="btn pull-right">Konfirmasi</button>
-									<div class="clearfix"></div>
-								</div>
-							</form>
-						</div>
-                                        <?php } ?>
-					</div>
+	    		<h2>Semua Tagihan</h2>
+	    		<div class="row">
+	    			<!-- Open Vacancies List -->
+	    			<div class="col-md-8">
+	    				<table class="jobs-list">
+	    					<tr>
+	    						<th>Position</th>
+	    						<th>Location</th>
+	    						<th>Type</th>
+	    					</tr>
+	    					<tr>
+	    						<!-- Position -->
+	    						<td class="job-position">
+	    							<a href="page-job-details.html">Front End Developer</a> <span class="label label-danger">New</span>
+	    						</td>
+	    						<!-- Location -->
+	    						<td class="job-location">
+	    							<div class="job-country">United Kingdom</div>
+	    							<div class="job-city">London</div>
+	    						</td>
+	    						<!-- Job Type -->
+	    						<td class="job-type hidden-phone">FULL-TIME</td>
+	    					</tr>
+	    					<tr>
+	    						<td class="job-position">
+	    							<a href="page-job-details.html">Back-end Developer</a> <span class="label label-danger">New</span>
+	    						</td>
+	    						<td class="job-location">
+	    							<div class="job-country">United Kingdom</div>
+	    							<div class="job-city">Manchester</div>
+	    						</td>
+	    						<td class="job-type hidden-phone">PART-TIME</td>
+	    					</tr>
+	    					<tr>
+	    						<td class="job-position">
+	    							<a href="page-job-details.html">Creative Director</a>
+	    						</td>
+	    						<td class="job-location">
+	    							<div class="job-country">United Kingdom</div>
+	    							<div class="job-city">Manchester</div>
+	    						</td>
+	    						<td class="job-type hidden-phone">PART-TIME</td>
+	    					</tr>
+	    					<tr>
+	    						<td class="job-position">
+	    							<a href="page-job-details.html">Interactive Developer</a> <span class="label label-danger">New</span>
+	    						</td>
+	    						<td class="job-location">
+	    							<div class="job-country">United Kingdom</div>
+	    							<div class="job-city">Manchester</div>
+	    						</td>
+	    						<td class="job-type hidden-phone">PART-TIME</td>
+	    					</tr>
+	    					<tr>
+	    						<td class="job-position">
+	    							<a href="page-job-details.html">Lead Designer</a>
+	    						</td>
+	    						<td class="job-location">
+	    							<div class="job-country">United Kingdom</div>
+	    							<div class="job-city">Manchester</div>
+	    						</td>
+	    						<td class="job-type hidden-phone">PART-TIME</td>
+	    					</tr>
+	    					<tr>
+	    						<td class="job-position">
+	    							<a href="page-job-details.html">Ruby on Rails Developer</a>
+	    						</td>
+	    						<td class="job-location">
+	    							<div class="job-country">United Kingdom</div>
+	    							<div class="job-city">Manchester</div>
+	    						</td>
+	    						<td class="job-type hidden-phone">PART-TIME</td>
+	    					</tr>
+	    				</table>
+	    			</div>
+
                                     
-                                    <div class="portfolio-item-description col-sm-5 col-sm-offset-1">
-                                        <h4>Informasi Tagihan</h4><br>
+                    <div class="portfolio-item-description col-sm-5 col-sm-offset-1">
+                        <h4>Informasi Tagihan</h4><br>
 						<ul class="no-list-style">
 							<li><b>Nama User:</b> <?php echo $data[nama_user] ?></li>
 							<li><b>Nama Objek Wisata:</b> <?php echo $data[nama_wisata] ?></li>
