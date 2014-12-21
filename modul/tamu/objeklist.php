@@ -21,7 +21,7 @@ $noPage = $_GET['page'];
 else $noPage = 1;
 // perhitungan offset
 $offset = ($noPage - 1) * $dataPerPage;
-                    $tampil=mysql_query("select * from tbpengajuan order by idpengajuan ASC LIMIT $offset, $dataPerPage");
+                    $tampil=mysql_query("select tbpengajuan.deskripsi, tbpengajuan.foto, tbpengajuan.nama_wisata, tbpengajuan.nama_wisata, tbpengajuan.alamat_wisata, tbuser.nama_user from tbpengajuan, tbuser where tbuser.iduser=tbpengajuan.iduser and tbpengajuan.status='Approve' order by idpengajuan ASC LIMIT $offset, $dataPerPage");
                     $no=1;
                     while($dt=mysql_fetch_array($tampil)){
                         echo    "<div class='row service-wrapper-row'>
@@ -43,7 +43,7 @@ $offset = ($noPage - 1) * $dataPerPage;
                                 </div>";
                                 $no++;
                                 }
-                                $query = "SELECT COUNT(*) AS jumData from tbuser" ;
+                                $query = "SELECT COUNT(*) AS jumData from tbpengajuan, tbuser where tbuser.iduser=tbpengajuan.iduser" ;
 $hasil = mysql_query($query);
 $data = mysql_fetch_array($hasil);
 $jumData = $data['jumData'];
