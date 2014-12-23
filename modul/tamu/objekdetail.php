@@ -1,5 +1,5 @@
 <?php include "../../config/koneksi.php"; 
-$q=mysql_query("select tbpengajuan.nama_wisata, tbpengajuan.foto from tbpengajuan, tbuser, tbkategori where tbuser.iduser=tbpengajuan.iduser and tbpengajuan.idkategori=tbkategori.idkategori and tbpengajuan.idpengajuan='$_GET[idpengajuan]'");
+$q=mysql_query("select tbpengajuan.nama_wisata, tbpengajuan.foto, tbpengajuan.Deskripsi from tbpengajuan, tbuser, tbkategori where tbuser.iduser=tbpengajuan.iduser and tbpengajuan.idkategori=tbkategori.idkategori and tbpengajuan.idpengajuan='$_GET[idpengajuan]'");
 $data=mysql_fetch_array($q);
 ?>
 
@@ -22,70 +22,17 @@ $data=mysql_fetch_array($q);
 	    				<div class="product-image-large">
 	    					<img src="img_objekwisata/<?php echo $data[foto] ?>" alt="Item Name">
 	    				</div>
-	    				<div class="colors">
-							<span class="color-white"></span>
-							<span class="color-black"></span>
-							<span class="color-blue"></span>
-							<span class="color-orange"></span>
-							<span class="color-green"></span>
-						</div>
 	    			</div>
-	    			<!-- End Product Image & Available Colors -->
-	    			<!-- Product Summary & Options -->
 	    			<div class="col-sm-6 product-details">
-	    				<h4>LOREM IPSUM DOLOR</h4>
-	    				<div class="price">
-							<span class="price-was">$959.99</span> $999.99
-						</div>
-						<h5>Quick Overview</h5>
+	    				<h5>Deskripsi Singkat</h5>
 	    				<p>
-	    					Morbi eleifend congue elit nec sagittis. Praesent aliquam lobortis tellus, nec consequat massa ornare vitae. Ut fermentum justo vel venenatis eleifend. Fusce id magna eros.
+							<?php echo $data[Deskripsi] ?>	    					
 	    				</p>
 						<table class="shop-item-selections">
-							<!-- Color Selector -->
 							<tr>
-								<td><b>Color:</b></td>
+								<td><b>Beri Rating :</b></td>
 								<td>
-									<div class="dropdown choose-item-color">
-										<a class="btn btn-sm btn-grey" data-toggle="dropdown" href="#"><span class="color-orange"></span> Orange <b class="caret"></b></a>
-										<ul class="dropdown-menu" role="menu">
-											<li role="menuitem"><a href="#"><span class="color-white"></span> White</a></li>
-											<li role="menuitem"><a href="#"><span class="color-black"></span> Black</a></li>
-											<li role="menuitem"><a href="#"><span class="color-blue"></span> Blue</a></li>
-											<li role="menuitem"><a href="#"><span class="color-orange"></span> Orange</a></li>
-											<li role="menuitem"><a href="#"><span class="color-green"></span> Green</a></li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-							<!-- Size Selector -->
-							<tr>
-								<td><b>Size:</b></td>
-								<td>
-									<div class="dropdown">
-										<a class="btn btn-sm btn-grey" data-toggle="dropdown" href="#">XXL <b class="caret"></b></a>
-										<ul class="dropdown-menu" role="menu">
-											<li role="menuitem"><a href="#">XS</a></li>
-											<li role="menuitem"><a href="#">S</a></li>
-											<li role="menuitem"><a href="#">M</a></li>
-											<li role="menuitem"><a href="#">L</a></li>
-											<li role="menuitem"><a href="#">XXL</a></li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-							<!-- Quantity -->
-							<tr>
-								<td><b>Quantity:</b></td>
-								<td>
-									<input type="text" class="form-control input-sm input-micro" value="1">
-								</td>
-							</tr>
-							<!-- Add to Cart Button -->
-							<tr>
-								<td>&nbsp;</td>
-								<td>
-									<a href="#" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Add to Cart</a>
+									<a href="#" class="btn btn"><i class="icon-shopping-cart icon-white"></i> +1</a>
 								</td>
 							</tr>
 						</table>
@@ -97,8 +44,8 @@ $data=mysql_fetch_array($q);
 	    				<div class="tabbable">
 	    					<!-- Tabs -->
 							<ul class="nav nav-tabs product-details-nav">
-								<li class="active"><a href="#tab1" data-toggle="tab">Description</a></li>
-								<li><a href="#tab2" data-toggle="tab">Specification</a></li>
+								<li class="active"><a href="#tab1" data-toggle="tab">Informasi</a></li>
+								<li><a href="#tab2" data-toggle="tab">Galery</a></li>
 							</ul>
 							<!-- Tab Content (Full Description) -->
 							<div class="tab-content product-detail-info">
