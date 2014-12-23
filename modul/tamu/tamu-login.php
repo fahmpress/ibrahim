@@ -1,6 +1,4 @@
-<html>
-    <body>
-        <div class="section section-breadcrumbs">
+		<div class="section section-breadcrumbs">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -31,13 +29,6 @@
 							</form>
 						</div>
 					</div>
-					
-									
 				</div>
 			</div>
-        </div><br><br><br><br><br>
-
-        
-       
-    </body>
-</html>
+		</div> 	

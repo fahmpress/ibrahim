@@ -48,10 +48,18 @@ $dt=mysql_fetch_array($q);
                             <?php 
                         	if($data['status']=="Approve") {
                         	?>
-							<li><button class="btn-grey"><a href="index.php?module=tagihan">Lihat tagihan</a></button></li>
+								<li><button class="btn-grey"><a href="index.php?module=tagihan">Lihat tagihan</a></button></li>
 							<?php 
-							} else if($data['status']=="Pembayaran" || $data['status']=="Aktif") { ?>
-							<li><button class="btn-grey"><a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>">Lihat invoice</a></button></li>
+							} else if($data['status']=="Aktif") { ?>
+								<li>
+									<button class="btn-grey"><a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>">Lihat invoice</a></button>
+									<button class="btn-grey"><a href="#">Tambah Galery</a></button>
+								</li>
+							<?php 
+							} else if($data['status']=="Pembayaran") { ?>
+								<li>
+									<button class="btn-grey"><a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>">Lihat invoice</a></button>
+								</li>
 							<?php } ?>
 						</ul>
 					</div>

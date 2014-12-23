@@ -21,7 +21,7 @@ $ambil=mysql_query("select tbpengajuan.status, tbpengajuan.idpengajuan, tbuser.n
 	    	<div class="container">
 	    		<h2>Semua Tagihan</h2>
 	    		<div class="row">
-	    			<div class="col-md-8">
+	    			<div class="col-md-9">
 	    				<table class="jobs-list">
 	    					<tr>
 	    						<th>ID</th>
@@ -58,7 +58,7 @@ $ambil=mysql_query("select tbpengajuan.status, tbpengajuan.idpengajuan, tbuser.n
 	    							<div class="job-country"><a href="index.php?module=konfirmasi&id=<?php echo $data[idpengajuan]?>&nm=<?php echo $data[nama_wisata]?>"><span class="label label-warning">Konfirmasi</span></a></div>
 	    							<?php } 
 	    							else { ?>
-	    							<div class="job-country"><span class="label label-danger">Pending</span></div>	
+	    							<div class="job-country"><span class="label label-danger">Menunggu Validasi</span></div>	
 	    							<?php } ?>
 
 	    						</td>
@@ -76,7 +76,7 @@ $ambil=mysql_query("select tbpengajuan.status, tbpengajuan.idpengajuan, tbuser.n
 	    				</table>
 	    			</div>
 
-	    			<div class="col-md-4 col-sm-6">
+	    			<div class="col-md-3">
 	    				<div class="join-us-promo">
 	    					<!-- Quote -->
 							<div class="join-us-bubble">
@@ -101,11 +101,3 @@ $ambil=mysql_query("select tbpengajuan.status, tbpengajuan.idpengajuan, tbuser.n
 				</div>
                 </div>
         </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
