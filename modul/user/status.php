@@ -18,7 +18,7 @@ $dt=mysql_fetch_array($q);
 	    	<div class="container">
 
 	    		<?php 
-				$tampil=mysql_query("select tbpaket.nama_paket, tbpengajuan.waktu_pengajuan, tbpengajuan.waktu_penerimaan, tbpengajuan.status, tbkategori.nama_kategori, tbpengajuan.deskripsi, tbpengajuan.foto, tbpengajuan.nama_wisata, tbpengajuan.nama_wisata, tbpengajuan.alamat_wisata, tbuser.nama_user 
+				$tampil=mysql_query("select tbpaket.nama_paket, tbpengajuan.idpengajuan, tbpengajuan.waktu_pengajuan, tbpengajuan.waktu_penerimaan, tbpengajuan.status, tbkategori.nama_kategori, tbpengajuan.deskripsi, tbpengajuan.foto, tbpengajuan.nama_wisata, tbpengajuan.nama_wisata, tbpengajuan.alamat_wisata, tbuser.nama_user 
 										from tbpaket, tbkategori, tbpengajuan, tbuser 
 										where tbpaket.idpaket=tbpengajuan.idpaket and tbkategori.idkategori=tbpengajuan.idkategori and tbuser.iduser=tbpengajuan.iduser 
 										and tbpengajuan.iduser='$iduser'");
@@ -41,16 +41,17 @@ $dt=mysql_fetch_array($q);
                         				else {$color="label label-success";}
                         	?>
 							<li><b>Status : </b><span class="<?php echo $color ?>"><?php echo $data[status] ?></span></li>
+							<li><b>ID Pengajuan : </b> <?php echo $data[idpengajuan] ?></li>
 							<li><b>Paket : </b> <?php echo $data[nama_paket] ?></li>
 							<li><b>Waktu Pengajuan : </b><?php echo $data[waktu_pengajuan]?></li>
                             <li><b>Waktu Penerimaan : </b><?php echo $data[waktu_penerimaan]?></li>
                             <?php 
                         	if($data['status']=="Approve") {
                         	?>
-							<li><a href="index.php?module=tagihan" class="btn">Lihat tagihan</a></li>
+							<li><button class="btn-grey"><a href="index.php?module=tagihan">Lihat tagihan</a></button></li>
 							<?php 
 							} else if($data['status']=="Pembayaran" || $data['status']=="Aktif") { ?>
-							<li><a href="#" class="btn">Lihat invoice</a></li>
+							<li><button class="btn-grey"><a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>">Lihat invoice</a></button></li>
 							<?php } ?>
 						</ul>
 					</div>

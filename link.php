@@ -67,6 +67,9 @@ include "config/fungsi_nip.php";
                                                     else if($_GET['module']=="konfirmasi"){
                                                     include "modul/user/konfirmasi.php";
                                                     }
+                                                        else if($_GET['module']=="invoice"){
+                                                        include "modul/user/invoice.php";
+                                                        }
                      
                        
     } 
