@@ -64,6 +64,9 @@ include "config/fungsi_nip.php";
                                                 else if($_GET['module']=="objeklist2"){
                                                 include "modul/user/objeklist2.php";
                                                 }
+                                                    else if($_GET['module']=="konfirmasi"){
+                                                    include "modul/user/konfirmasi.php";
+                                                    }
                      
                        
     } 

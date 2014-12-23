@@ -36,14 +36,22 @@ $dt=mysql_fetch_array($q);
 						<ul class="no-list-style">
                         	<?php 
                         	if($data['status']=="Pending") {$color="label label-danger";}
-                        		else if($data[status]=="Pembayaran") {$color="label label-warning";}
-                        			else {$color="label label-success";}
+                        		else if($data[status]=="Approve") {$color="label label-warning";}
+                        			else if($data[status]=="Pembayaran") {$color="label label-info";}
+                        				else {$color="label label-success";}
                         	?>
 							<li><b>Status : </b><span class="<?php echo $color ?>"><?php echo $data[status] ?></span></li>
-							<li><b>Paket :</b> <?php echo $data[nama_paket] ?></li>
-							<li><b>Waktu Pengajuan :</b> <?php echo $data[waktu_pengajuan] ?></li>
-                                                        <li><b>Waktu Penerimaan:</b> <?php echo $data[waktu_penerimaan]?></li>
-							<li class="portfolio-visit-btn"><a href="index.php?module=tagihan" class="btn">Lihat status pembayaran</a></li>
+							<li><b>Paket : </b> <?php echo $data[nama_paket] ?></li>
+							<li><b>Waktu Pengajuan : </b><?php echo $data[waktu_pengajuan]?></li>
+                            <li><b>Waktu Penerimaan : </b><?php echo $data[waktu_penerimaan]?></li>
+                            <?php 
+                        	if($data['status']=="Approve") {
+                        	?>
+							<li><a href="index.php?module=tagihan" class="btn">Lihat tagihan</a></li>
+							<?php 
+							} else if($data['status']=="Pembayaran" || $data['status']=="Aktif") { ?>
+							<li><a href="#" class="btn">Lihat invoice</a></li>
+							<?php } ?>
 						</ul>
 					</div>
 				</div>

@@ -78,6 +78,13 @@
 									<div class="accordion-inner">
 										<div class="answer">Jawab:</div>
 										<p>Setelah anda mengajukan Objek Wisata, kami akan melakukan verifikasi dalam waktu 3 hari kerja, setelah itu akan kami hubungi anda setelah pengajuan diterima dan ditampilkan di halaman situs kami</p>
+										<p>Ada 4 status setelah anda mengajukan Objek Wisata kepada Kami :</p>
+										<ul>
+											<li><span class="label label-danger">Pending</span> : Objek wisata yang diajukan menunggu di validasi admin (Max 3 hari kerja).</li>
+											<li><span class="label label-warning">Approve</span> : Objek wisata sudah di validasi dan diterima, namun belum membayar paket yang diambil.</li>
+											<li><span class="label label-info">Pembayaran</span> : User telah melakukan konfirmasi pembayaran dan menunggu validasi pembayaran oleh Admin (Max 3 hari kerja).</li>
+											<li><span class="label label-success">Aktif</span> : Pembayaran telah di validasi, Objek wisata telah aktif dan tampil di halaman Web kami.</li>
+										</ul>
 									</div>
 								</div>
 							</div>
