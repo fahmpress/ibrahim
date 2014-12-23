@@ -135,6 +135,41 @@ include "timeout.php";
 	<!-- Footer -->
 	    <div class="footer">
 	    	<div class="container">
+                <div class="row">
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>Wisata Paling HOT</h3>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <a href="#"><img src="img_objekwisata/426309aItp15XTT5.jpg" alt="Project Name"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>Navigasi</h3>
+                        <ul class="no-list-style footer-navigate-section">
+                            <li><a href="index.php?module=pengajuan">Harga Paket</a></li>
+                            <li><a href="index.php?module=tentang">Tentang Sukabumi</a></li>
+                            <li><a href="index.php?module=howto">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-footer col-md-4 col-xs-6">
+                        <h3>Informasi Kontak</h3>
+                        <p class="contact-us-details">
+                            <b>Alamat :</b> Jl.Babakan Sirna 25 Benteng Kota Sukabumi<br/>
+                            <b>Tlp :</b> +62 (266) 215 417, 225905<br/>
+                            <b>Email :</b> <a href="mailto:helpdesk@wisatasmi.go.id">helpdesk@wisatasmi.go.id</a><br/>
+                            <b>Jam Kerja :</b> Senin- Sabtu 09 AM – 4 PM<br/>                            
+                        </p>
+                    </div>
+                    <div class="col-footer col-md-2 col-xs-6">
+                        <h3>Social Links</h3>
+                        <ul class="footer-stay-connected no-list-style">
+                            <li><a href="#" class="facebook"></a></li>
+                            <li><a href="#" class="twitter"></a></li>
+                            <li><a href="#" class="googleplus"></a></li>
+                        </ul>
+                    </div>
 		    	<div class="row">
 		    		<div class="col-md-12">
 		    			<div class="footer-copyright">&copy; Web Depeloper by Ibrahim. All rights reserved.</div>
