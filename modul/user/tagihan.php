@@ -28,14 +28,14 @@ $idpengajuan=$data[idpengajuan];
 	    			<div class="col-md-8">
 	    				<table class="jobs-list">
 	    					<tr>
-	    						<th>Position</th>
-	    						<th>Location</th>
+	    						<th>ID</th>
+	    						<th>Nama Objek Wisata</th>
 	    						<th>Type</th>
 	    					</tr>
 	    					<tr>
 	    						<!-- Position -->
 	    						<td class="job-position">
-	    							<a href="page-job-details.html">Front End Developer</a> <span class="label label-danger">New</span>
+	    							<a href="page-job-details.html">Front End Developer</a> <span class="label label-success">New</span>
 	    						</td>
 	    						<!-- Location -->
 	    						<td class="job-location">

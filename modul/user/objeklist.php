@@ -25,12 +25,14 @@ $offset = ($noPage - 1) * $dataPerPage;
                     $no=1;
                     while($dt=mysql_fetch_array($tampil)){
                         echo    "<div class='row service-wrapper-row'>
-        			<div class='col-sm-4'>
-        				<div class='service-image'>
+        			<div class='col-sm-6'>
+                    <div class='portfolio-item'>
+        				<div class='portfolio-image'>
         					<img src='img_objekwisata/$dt[foto]' alt='Service Name'>
         				</div>
+                    </div>
         			</div>
-        			<div class='col-sm-8'>
+        			<div class='portfolio-item-description col-sm-6'>
     					<h3>$dt[nama_wisata]</h3>
     					<p>
     					$dt[deskripsi]	
