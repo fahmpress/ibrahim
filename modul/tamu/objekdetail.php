@@ -1,8 +1,15 @@
+<?php include "../../config/koneksi.php"; 
+$q=mysql_query("select tbpengajuan.nama_wisata, tbpengajuan.foto from tbpengajuan, tbuser, tbkategori where tbuser.iduser=tbpengajuan.iduser and tbpengajuan.idkategori=tbkategori.idkategori and tbpengajuan.idpengajuan='$_GET[idpengajuan]'");
+$data=mysql_fetch_array($q);
+?>
+
+
+
 <div class="section section-breadcrumbs">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1>Objek Wisata Dari Database</h1>
+						<h1><?php echo $data[nama_wisata] ?></h1>
 					</div>
 				</div>
 			</div>
@@ -11,10 +18,9 @@
         <div class="section">
 	    	<div class="container">
 	    		<div class="row">
-	    			<!-- Product Image & Available Colors -->
 	    			<div class="col-sm-6">
 	    				<div class="product-image-large">
-	    					<img src="img/product3.jpg" alt="Item Name">
+	    					<img src="img_objekwisata/<?php echo $data[foto] ?>" alt="Item Name">
 	    				</div>
 	    				<div class="colors">
 							<span class="color-white"></span>
