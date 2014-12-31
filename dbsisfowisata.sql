@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 20, 2014 at 08:35 PM
+-- Generation Time: Dec 28, 2014 at 03:20 PM
 -- Server version: 5.5.39
 -- PHP Version: 5.4.31
 
@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS `tbbayar` (
 --
 
 INSERT INTO `tbbayar` (`idbayar`, `idpengajuan`, `tgl_pembayaran`, `rek_user`, `konfirm_admin`) VALUES
-('5495c53da570b', 10000023, '11-12-2014', 'Bank BRI No. Rek 100010101 a/n Aim Ibrahim', 'Pending');
+('54971d55205e7', 10000023, '11-12-2014', 'Bank BRI No. Rek 100010101 a/n Aim Ibrahim', 'Lunas'),
+('549ffb18e3d7c', 10000036, '2014-12-24', 'Bank BJB No. Rek. 123456789 a/n Aim Sajah', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -48,11 +49,24 @@ INSERT INTO `tbbayar` (`idbayar`, `idpengajuan`, `tgl_pembayaran`, `rek_user`, `
 --
 
 CREATE TABLE IF NOT EXISTS `tbfasilitas` (
+  `idfasilitas` int(20) NOT NULL,
   `idpengajuan` int(30) NOT NULL,
   `fasilitas` varchar(100) NOT NULL,
   `ket_fasilitas` text NOT NULL,
   `foto` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbfasilitas`
+--
+
+INSERT INTO `tbfasilitas` (`idfasilitas`, `idpengajuan`, `fasilitas`, `ket_fasilitas`, `foto`) VALUES
+(2147483647, 10000023, 'a', 'bb', '953700'),
+(2147483647, 10000023, 'bb', 'b', ''),
+(2147483647, 10000023, 'cc', 'c', ''),
+(2147483647, 10000023, 'dd', 'd', ''),
+(2147483647, 10000023, 'gg', 'g', ''),
+(2147483647, 10000023, 'hh', 'h', '');
 
 -- --------------------------------------------------------
 
@@ -120,19 +134,19 @@ CREATE TABLE IF NOT EXISTS `tbpengajuan` (
   `waktu_pengajuan` varchar(20) NOT NULL DEFAULT '-',
   `waktu_penerimaan` varchar(20) NOT NULL DEFAULT '-',
   `rating` int(10) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10000040 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10000041 ;
 
 --
 -- Dumping data for table `tbpengajuan`
 --
 
 INSERT INTO `tbpengajuan` (`idpengajuan`, `iduser`, `nama_wisata`, `idkategori`, `alamat_wisata`, `foto`, `deskripsi`, `status`, `keterangan`, `idpaket`, `waktu_pengajuan`, `waktu_penerimaan`, `rating`) VALUES
-(10000023, 10020, 'Curug Bibijilan', 'K002', 'Nyalindung Kabupaten Sukabumi', '613674Curug-Cicurug-Tempat-Wisata-di-Sukabumi.jpg', 'Indah bangedd lho!!!', 'Pending', '', 'P002', '2014-12-20 | 07:37:1', '-', 0),
+(10000023, 10020, 'Curug Bibijilan', 'K002', 'Nyalindung Kabupaten Sukabumi', '613674Curug-Cicurug-Tempat-Wisata-di-Sukabumi.jpg', 'Air Terjun Bibijilan berada di kawasan wisata Buni Ayu dan memiliki ketinggian sekitar 100 m dengan airnya yang dingin dan sejuk berwarna hijau tosca meluncur dari bebatuan kapur.  Air terjun ini bertingkat-tingkat dan setiap tingkatannya dapat didaki hingga puncaknya. ', 'Aktif', '', 'P002', '2014-12-20 | 07:37:1', '2014-12-27 | 12:01:2', 0),
 (10000033, 10027, 'Curug Cikondang', 'K001', 'Sukabumi Selatan teuing mana', '426309aItp15XTT5.jpg', 'Curug Cikondang ini sangat indah, apalagi kalo datang sama pacar', 'Pending', '', 'P002', '2014-12-20 | 12:46:0', '-', 0),
-(10000036, 10020, 'Riam Jeram', 'K002', 'Warung Kiara', '737917img_20111215091149_4ee9576585800.jpg', 'Anda Suka Olah Raga Adrenalin?', 'Pending', '', 'P002', '2014-12-20 | 08:26:1', '-', 0),
-(10000037, 10020, 'Goa Angker', 'Pilih kate', '', '482844adventure_buniayu.jpg', '', 'Pending', '', 'Pilih', '2014-12-20 | 08:26:5', '-', 0),
-(10000038, 10020, 'Pelabuhan Ratu', 'Pilih kate', '', '45041922399cf8623aecb969d50ec32f760865_pelabuhan-ratu.jpg', '', 'Pending', '', 'Pilih', '2014-12-20 | 08:27:1', '-', 0),
-(10000039, 10020, 'Cibangban', 'Pilih kate', '', '736788Kota pelabuhan ratu.JPG', '', 'Pending', '', 'Pilih', '2014-12-20 | 08:27:5', '-', 0);
+(10000036, 10020, 'Riam Jeram', 'K002', 'Warung Kiara', '737917img_20111215091149_4ee9576585800.jpg', 'Anda Suka Olah Raga Adrenalin?', 'Pembayaran', '', 'P002', '2014-12-20 | 08:26:1', '-', 0),
+(10000037, 10020, 'Goa Angker', 'K003', 'Tempat Angker', '482844adventure_buniayu.jpg', 'Wisata bagi yang suka horror :D', 'Approve', '', 'P002', '2014-12-20 | 08:26:5', '-', 0),
+(10000038, 10020, 'Pelabuhan Ratu', 'K004', '', '45041922399cf8623aecb969d50ec32f760865_pelabuhan-ratu.jpg', '', 'Pending', '', 'P002', '2014-12-20 | 08:27:1', '-', 0),
+(10000039, 10020, 'Cibangban', 'K002', '', '736788Kota pelabuhan ratu.JPG', '', 'Pending', '', 'P003', '2014-12-20 | 08:27:5', '-', 0);
 
 -- --------------------------------------------------------
 
@@ -145,27 +159,27 @@ CREATE TABLE IF NOT EXISTS `tbuser` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `nama_user` varchar(50) NOT NULL,
-  `umur` varchar(5) NOT NULL,
+  `umur` varchar(20) NOT NULL,
   `jk` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
   `email` varchar(50) NOT NULL,
   `nope` varchar(16) NOT NULL,
   `foto` varchar(200) NOT NULL,
   `level` varchar(10) NOT NULL DEFAULT '3'
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10030 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10031 ;
 
 --
 -- Dumping data for table `tbuser`
 --
 
 INSERT INTO `tbuser` (`iduser`, `username`, `password`, `nama_user`, `umur`, `jk`, `alamat`, `email`, `nope`, `foto`, `level`) VALUES
-(10001, 'admin', '12345', 'Ibrahim', '', '', '', '', '', '646615hd_wallpaper_6552.jpg', '1'),
+(10001, 'admin', 'admin', 'Ibrahim', '', '', '', '', '', '646615hd_wallpaper_6552.jpg', '1'),
 (10002, 'auditor', 'auditor', 'Kepala Dinas Pariwisata', '', '', '', '', '', '', '2'),
 (10003, 'user', 'user', 'Guest', '', '', '', '', '', '', '3'),
 (10027, 'abah', '12345', 'Abah Fikri', '23', 'Laki-laki', 'Sukabumi', 'abah@yahoo.com', '089', '353014Screenshot from 2014-12-16 01:23:35.png', '3'),
 (10026, 'test', '', '', '', '', '', '', '', '', '3'),
 (10021, 'steward', '12345', 'Cristen Steward', '24', 'Perempuan', 'Paris - UK', 'csteward@gmail.com', '0857-1-1-1', '534124hd_wallpaper_6552.jpg', '3'),
-(10020, 'ibrahim', 'ibrahim', 'Aim Ibrahim', '23', 'Laki-laki', 'cimangkok', 'ibrahmi@gmail.com', '0857-0-0-0', '593614aim.jpg', '3');
+(10020, 'ibrahim', 'ibrahim', 'Aim Ibrahim', '23', 'Laki-laki', 'cimangkok deukeut cianyur', 'ibrakadabra@gmail.com', '0857', '593614aim.jpg', '3');
 
 --
 -- Indexes for dumped tables
@@ -209,12 +223,12 @@ ALTER TABLE `tbuser`
 -- AUTO_INCREMENT for table `tbpengajuan`
 --
 ALTER TABLE `tbpengajuan`
-MODIFY `idpengajuan` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10000040;
+MODIFY `idpengajuan` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10000041;
 --
 -- AUTO_INCREMENT for table `tbuser`
 --
 ALTER TABLE `tbuser`
-MODIFY `iduser` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10030;
+MODIFY `iduser` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10031;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

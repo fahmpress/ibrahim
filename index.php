@@ -11,15 +11,23 @@ include "timeout.php";
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-                        
+        
+        <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/theme.css" />
+        <link rel="stylesheet" href="assets/css/MoneAdmin.css" />
+        <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
+
         <!-- CSS mPurpose Master -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/icomoon-social.css">
         <link rel="stylesheet" href="css/leaflet.css" />
-	<link rel="stylesheet" href="css/main.css">
+	    <link rel="stylesheet" href="css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         
+        <!-- CSS bcore-admin -->
+        <link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css" />
         <link rel="stylesheet" href="assets/plugins/validationengine/css/validationEngine.jquery.css" />
 	</head>
     <body>
@@ -112,8 +120,8 @@ include "timeout.php";
                                                                         <div>
 										<h4>Akun</h4>
 										<ul>
-                                                                                    <li><a href="#"><i class="fa fa-user"></i> Rubah Data Profile</a></li>
-											<li><a href="#"><i class="fa fa-unlock-alt"></i> Rubah Password</a></li>
+                                                                                    <li><a href="index.php?module=profile"><i class="fa fa-user"></i> Profile Saya</a></li>
+											<li><a href="index.php?module=passwd"><i class="fa fa-unlock-alt"></i> Rubah Password</a></li>
 										</ul>
                                                                         </div>
                                                                 </div>
@@ -131,8 +139,7 @@ include "timeout.php";
         
             include "link.php";
         ?>
-        <!-- Page Title -->
-	<!-- Footer -->
+        
 	    <div class="footer">
 	    	<div class="container">
                 <div class="row">
@@ -150,6 +157,7 @@ include "timeout.php";
                             <li><a href="index.php?module=pengajuan">Harga Paket</a></li>
                             <li><a href="index.php?module=tentang">Tentang Sukabumi</a></li>
                             <li><a href="index.php?module=howto">FAQ</a></li>
+                            <li><a href="login-admin.php">Admin</a></li>
                         </ul>
                     </div>
                     
@@ -175,8 +183,9 @@ include "timeout.php";
 		    			<div class="footer-copyright">&copy; Web Depeloper by Ibrahim. All rights reserved.</div>
 		    		</div>
 		    	</div>
-		    </div>
-	    </div>
+		      </div>
+	       </div>
+        </div>
         <!-- CSS mPurpose Master -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
@@ -193,6 +202,7 @@ include "timeout.php";
         <script src="assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js"></script>
         <script src="assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>
         <script src="assets/js/validationInit.js"></script>
+        <script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
         <script>
         $(function () { formValidation(); });
         </script>

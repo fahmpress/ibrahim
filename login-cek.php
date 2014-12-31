@@ -21,9 +21,9 @@ if ($ketemu > 0){
   
   
   if($_SESSION[level]==1){
-	header('location:media.php?module=adm');
+	header('location:index-admin.php?module=adm');
   } else if($_SESSION[level]==2){
-	header('location:media.php?module=adt');
+	header('location:index-admin.php?module=adt');
   } else {
 	header('location:login-error.php');
   }

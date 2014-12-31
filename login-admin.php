@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
@@ -6,13 +6,15 @@
 <!-- BEGIN HEAD -->
 <head>
      <meta charset="UTF-8" />
-    <title>Web Wisata Sukabumi | Login Admin</title>
+    <title>BCORE Admin Dashboard Template | Login Page</title>
     <link rel="shortcut icon" href="img/logosmi.png" >
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <!-- GLOBAL STYLES -->
      <!-- PAGE LEVEL STYLES -->
      <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="assets/css/login.css" />
@@ -33,25 +35,27 @@
    <!-- PAGE CONTENT --> 
     <div class="container">
     <div class="text-center">
-        <img src="img/web-logo.png" id="logoimg" alt=" Logo" />
+        <img src="img/web-logo.png">
     </div>
-    <div class="col-sm-5 col-sm-offset-3">
-        <div id="login" class="tab-pane active">
-            <form role="form" role="form" method="post" action="login-cek.php" id="block-validate">
-								<div class="form-group">
-									<input class="form-control" id="required2" name="required2" type="text" placeholder="username">
-								</div>
-								<div class="form-group">
-									<input class="form-control" id="password2" name="password2" type="password" placeholder="password">
-								</div>
-								<div class="form-group">
-									<button type="submit" class="btn pull-right">Login</button>
-									<div class="clearfix"></div>
-								</div>
-							</form>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <form role="form" method="post" action="login-cek.php" id="block-validate" class="form-signin">
+                <p class="text-muted text-center btn-block btn btn-success btn-rect">
+                    Login admin
+                </p>
+                <div class="form-group">
+                  <input type="text" id="required2" name="required2" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <input type="password" id="password2" name="password2" class="form-control" />
+                </div>
+                <button class="btn text-muted text-center btn-danger" type="submit">Login</button>
+            </form>
         </div>
     </div>
- </div>
+
+
+</div>
 
 	  <!--END PAGE CONTENT -->     
 	      
@@ -59,7 +63,7 @@
       <script src="assets/plugins/jquery-2.0.3.min.js"></script>
       <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
    <script src="assets/js/login.js"></script>
-   
+
    <script src="assets/plugins/validationengine/js/jquery.validationEngine.js"></script>
         <script src="assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js"></script>
         <script src="assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>

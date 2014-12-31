@@ -1,5 +1,4 @@
-<html>
-    <body>
+
         <div class="section section-breadcrumbs">
 			<div class="container">
 				<div class="row">
@@ -43,8 +42,5 @@
 									
 				</div>
 			</div>
+		</div>
 
-        
-       
-    </body>
-</html>

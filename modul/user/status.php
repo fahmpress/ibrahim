@@ -2,6 +2,7 @@
 $iduser=$_SESSION['id'];
 $q=mysql_query("select * from tbpengajuan, tbuser where tbuser.iduser=tbpengajuan.iduser and tbpengajuan.iduser='$iduser'");
 $dt=mysql_fetch_array($q);
+$echo=$_GET['echo'];
 ?>
 
 <div class="section section-breadcrumbs">
@@ -16,6 +17,13 @@ $dt=mysql_fetch_array($q);
 
         <div class="section">
 	    	<div class="container">
+	    		<?php 
+                    	if($echo=='berhasil'){ ?>
+                    	<div class="alert alert-success alert-dismissable">
+                    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    	Galery berhasil ditambah. <a href="index.php?module=objeklist" class="alert-link">Lihat</a>.
+                    	</div>
+                    	<?php } ?>
 
 	    		<?php 
 				$tampil=mysql_query("select tbpaket.nama_paket, tbpengajuan.idpengajuan, tbpengajuan.waktu_pengajuan, tbpengajuan.waktu_penerimaan, tbpengajuan.status, tbkategori.nama_kategori, tbpengajuan.deskripsi, tbpengajuan.foto, tbpengajuan.nama_wisata, tbpengajuan.nama_wisata, tbpengajuan.alamat_wisata, tbuser.nama_user 
@@ -48,17 +56,19 @@ $dt=mysql_fetch_array($q);
                             <?php 
                         	if($data['status']=="Approve") {
                         	?>
-								<li><button class="btn-grey"><a href="index.php?module=tagihan">Lihat tagihan</a></button></li>
+								<li>
+									<a href="index.php?module=tagihan" class="btn btn-default">Lihat tagihan</a>
+								</li>
 							<?php 
 							} else if($data['status']=="Aktif") { ?>
 								<li>
-									<button class="btn-grey"><a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>">Lihat invoice</a></button>
-									<button class="btn-grey"><a href="#">Tambah Galery</a></button>
+									<a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>" class="btn btn-default">Lihat invoice</a>
+									<a href="index.php?module=add-galery&idpengajuan=<?php echo $data[idpengajuan] ?>" class="btn btn-default">Tambah Galery</a>
 								</li>
 							<?php 
 							} else if($data['status']=="Pembayaran") { ?>
 								<li>
-									<button class="btn-grey"><a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>">Lihat invoice</a></button>
+									<a href="index.php?module=invoice&idpengajuan=<?php echo $data[idpengajuan] ?>" class="btn btn-default">Lihat invoice</a>
 								</li>
 							<?php } ?>
 						</ul>

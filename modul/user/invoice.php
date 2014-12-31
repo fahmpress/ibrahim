@@ -30,7 +30,13 @@ $data=mysql_fetch_array($q);
 	    						<li><b>Tanggal Pembayaran : </b><?php echo $data[tgl_pembayaran] ?></li>
 	    						<li><b>Dari Rekening : </b><?php echo $data[rek_user] ?></li>
 	    						<li><b>Total Bayar : </b>Rp. <?php echo number_format("$data[harga]") ?></li>
-	    						<li><b>Status : </b><?php echo $data[konfirm_admin] ?></li>
+	    						<?php
+	    						if($data['konfirm_admin']=="Pending") {$color="label label-danger";}
+                        		else if($data[konfirm_admin]=="Approve") {$color="label label-warning";}
+                        			else if($data[konfirm_admin]=="Pembayaran") {$color="label label-info";}
+                        				else {$color="label label-success";}
+                        		?>
+	    						<li><b>Status : </b><span class="<?php echo $color ?>"><?php echo $data[konfirm_admin] ?></span></li>
 	    					</ul>
 	    			</div>
 	    		</div>
