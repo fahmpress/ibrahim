@@ -1,17 +1,17 @@
 <?php include "../../config/koneksi.php"; 
 $q1=mysql_query("SELECT * FROM tbuser, tbpengajuan, tbpaket WHERE tbpaket.idpaket=tbpengajuan.idpaket and tbpengajuan.iduser=tbuser.iduser and tbpengajuan.status='pending'");
 
-	$count1=mysql_query("SELECT count(*) as pending FROM tbpengajuan WHERE status='pending'");
+	$count1=mysql_query("SELECT count(*) as pending FROM tbpengajuan WHERE status='Pending'");
 	$pending=mysql_fetch_array($count1);
 
 $q2=mysql_query("SELECT * FROM tbpaket, tbuser, tbpengajuan, tbbayar WHERE tbpengajuan.idpaket=tbpaket.idpaket and tbpengajuan.iduser=tbuser.iduser and tbpengajuan.idpengajuan=tbbayar.idpengajuan and konfirm_admin='pending'");
 
-	$count2=mysql_query("SELECT count(*) as konfirm FROM tbbayar WHERE konfirm_admin='pending'");
+	$count2=mysql_query("SELECT count(*) as konfirm FROM tbbayar WHERE konfirm_admin='Pending'");
 	$konfirm=mysql_fetch_array($count2);
 
 $q3=mysql_query("SELECT * FROM tbuser, tbpengajuan, tbpaket WHERE tbpaket.idpaket=tbpengajuan.idpaket and tbpengajuan.iduser=tbuser.iduser and tbpengajuan.keterangan<>'' and tbpengajuan.keterangan<>'validate'");
 
-	$count3=mysql_query("SELECT count(*) as pesan from tbpengajuan where keterangan<>'' and keterangan<>'validate'");
+	$count3=mysql_query("SELECT count(*) as pesan from tbpengajuan where keterangan<>'' and keterangan<>'Validate'");
 	$pesan_auditor=mysql_fetch_array($count3);
 ?>
 

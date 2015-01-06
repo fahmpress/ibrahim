@@ -18,6 +18,7 @@ include "timeout.php";
         <link rel="stylesheet" href="assets/css/MoneAdmin.css" />
         <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css" />
     </head>
     <body class="padTop53 " >
         <div id="wrap">
@@ -76,42 +77,29 @@ include "timeout.php";
             </div>
             <?php if ($_SESSION['level']=='1'){ ?>
             <ul id="menu" class="collapse">
-                <li>
+                <li class="panel">
                     <a href="index-admin.php?module=adm" ><i class="fa fa-home"></i> Home</a>                   
                 </li>
                 <li>
                     <a href="index-admin.php?module=pengajuan" ><i class="fa fa-file-text"></i> Pengajuan</a>                   
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i> Pembayaran </a>
+                    <a href="index-admin.php?module=pembayaran"><i class="fa fa-shopping-cart"></i> Pembayaran </a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-user"></i> Data User </a>
+                    <a href="index-admin.php?module=data-user"><i class="fa fa-user"></i> Data User </a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-book"></i> Kontrak </a>
+                    <a href="index-admin.php?module=kontrak"><i class="fa fa-book"></i> Kontrak </a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-dedent"></i> Kategori </a>
-                </li>
-                <li class="panel ">
-                <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
-                    <i class="fa fa-gear"> </i> Setting     
-                        <span class="pull-right">
-                            <i class="icon-angle-left"></i>
-                        </span>
-                       &nbsp; <span class="label label-default"></span>&nbsp;
-                </a>
-                    <ul class="collapse" id="component-nav">
-                        <li class=""><a href="#"> Akun </a></li>
-                        <li class=""><a href="#"> Password </a></li>
-                    </ul>
+                    <a href="index-admin.php?module=kategori"><i class="fa fa-dedent"></i> Kategori </a>
                 </li>
             </ul>
             <?php } if ($_SESSION['level']=='2'){ ?>
             <ul id="menu" class="collapse">
                 <li class="panel">
-                    <a href="media.php?module=adt" >
+                    <a href="index-admin.php?module=adt" >
                         <i class="fa fa-file-text"></i> Pengajuan
                     </a>                   
                 </li>
@@ -151,5 +139,8 @@ include "timeout.php";
     <script src="assets/plugins/jquery-2.0.3.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
 </body>
 </html>
+
+

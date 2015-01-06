@@ -22,6 +22,33 @@ include "config/fungsi_nip.php";
                     else if($_GET['module']=="pengajuan"){
                     include "modul/admin/pengajuan.php";
                     }
+                        else if($_GET['module']=="pengajuan-edit") {
+                        include "modul/admin/pengajuan-edit.php";
+                        }
+                            else if($_GET['module']=="pembayaran") {
+                            include "modul/admin/pembayaran.php";
+                            }
+                                else if($_GET['module']=="pembayaran-edit") {
+                                include "modul/admin/pembayaran-edit.php";
+                                }
+                                    else if($_GET['module']=="data-user") {
+                                    include "modul/admin/user.php";
+                                    }
+                                        else if($_GET['module']=="kontrak") {
+                                        include "modul/admin/kontrak.php";
+                                        }
+                                            else if($_GET['module']=="kategori") {
+                                            include "modul/admin/kategori.php";
+                                            }
+                                                else if($_GET['module']=="tambah-user") {
+                                                include "modul/admin/user-tambah.php";
+                                                }
+                                                    else if($_GET['module']=="edit-user") {
+                                                    include "modul/admin/user-edit.php";
+                                                    }
+                                                        else if($_GET['module']=="detail-user") {
+                                                        include "modul/admin/user-detail.php";
+                                                        }
     }
 	
     if ($_SESSION['level']=='2'){

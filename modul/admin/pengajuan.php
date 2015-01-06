@@ -1,6 +1,4 @@
-<?php include "../../config/koneksi.php"; 
-$q1=mysql_query("SELECT * FROM tbuser, tbpengajuan, tbpaket WHERE tbpaket.idpaket=tbpengajuan.idpaket and tbpengajuan.iduser=tbuser.iduser and tbpengajuan.status='pending'");
-?>
+<?php include "../../config/koneksi.php"; ?>
 <div id="content">
     <div class="inner">
     	<div class="row">
@@ -13,7 +11,7 @@ $q1=mysql_query("SELECT * FROM tbuser, tbpengajuan, tbpaket WHERE tbpaket.idpake
         <div class="row">
 
         	<div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
+                <table class="table table-striped table-bordered table-hover"> 
                                     		<thead>
                                         		<tr>
                                             		<th><center>No</center></th>
@@ -25,7 +23,7 @@ $q1=mysql_query("SELECT * FROM tbuser, tbpengajuan, tbpaket WHERE tbpaket.idpake
                                             		<th>Paket</th>
                                             		<th>Status</th>
                                             		<th>Auditor</th>
-                                            		<th></th>
+                                            		<th>Action</th>
                                         		</tr>
                                     		</thead>
                                     		<tbody>
@@ -40,9 +38,9 @@ $q1=mysql_query("SELECT * FROM tbuser, tbpengajuan, tbpaket WHERE tbpaket.idpake
                     else $noPage = 1;
                     // perhitungan offset
                     $offset = ($noPage - 1) * $dataPerPage;
-                    $tampil=mysql_query("select tbkategori.nama_kategori, tbpengajuan.idpengajuan, tbpengajuan.deskripsi, tbpengajuan.foto, tbpengajuan.nama_wisata, tbpengajuan.nama_wisata, tbpengajuan.alamat_wisata, tbuser.nama_user 
-                        from tbpengajuan, tbuser, tbkategori where tbuser.iduser=tbpengajuan.iduser and tbpengajuan.idkategori=tbkategori.idkategori and 
-                        tbpengajuan.status='Aktif' order by idpengajuan ASC LIMIT $offset, $dataPerPage");
+                    $tampil=mysql_query("select tbpengajuan.status, tbpengajuan.keterangan, tbpaket.nama_paket, tbkategori.nama_kategori, tbpengajuan.idpengajuan, tbpengajuan.deskripsi, tbpengajuan.foto, tbpengajuan.nama_wisata, tbpengajuan.nama_wisata, tbpengajuan.alamat_wisata, tbuser.nama_user 
+                        from tbpaket, tbpengajuan, tbuser, tbkategori where tbuser.iduser=tbpengajuan.iduser and tbpengajuan.idkategori=tbkategori.idkategori and tbpaket.idpaket=tbpengajuan.idpaket 
+                        order by idpengajuan ASC LIMIT $offset, $dataPerPage");
                     $no=1;
                     while($dt=mysql_fetch_array($tampil)){ ?>
 
@@ -53,33 +51,22 @@ $q1=mysql_query("SELECT * FROM tbuser, tbpengajuan, tbpaket WHERE tbpaket.idpake
                                             		<td><?php echo $dt[nama_wisata]?></td>
                                             		<td><?php echo $dt[nama_kategori]?></td>
                                             		<td>
-                                            			<a data-toggle="modal" href="#buttonedModal">
-                                            				<img src="img_objekwisata/small_<?php echo $dt[foto] ?>" alt="Project Name">
-                                            			</a>
+                                            			<img src="img_objekwisata/small_<?php echo $dt[foto] ?>" alt="Project Name">
                                             		</td>
-                                            		<td>Rp. <?php echo number_format("$data2[harga]") ?></td>
-                                            		<td class="center" style="text-align: center;">
-                                            			<a href="index-admin.php?module=konfirmasi-detail&idbayar=<?php echo $data2[idbayar]?>" class="btn btn-default btn-xs btn-grad"><i class="fa fa-folder-open"></i> Detail</a>
+                                                    <td><?php echo $dt[nama_paket]?></td>
+                                                    <td><?php echo $dt[status]?></td>
+                                                    <td><?php echo $dt[keterangan]?></td>
+                                            		<td>
+                                            			<div class="btn-group">
+                                              <button data-toggle="dropdown" class="btn btn-default btn-xs btn-grad dropdown-toggle"><i class="fa fa-gear"></i> <span class="caret"></span></button>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="index-admin.php?module=pengajuan-detail&idpengajuan=<?php echo $dt[idpengajuan]?>"><i class="fa fa-folder-open"></i> Detail</a></li>
+                                                <li><a href="index-admin.php?module=pengajuan-edit&idpengajuan=<?php echo $dt[idpengajuan]?>"><i class="fa fa-pencil-square-o"></i> Edit</a></li>
+                                                <li><a href="modul/admin/proses.php?module=adm&act=pengajuan-delete&idpengajuan=<?php echo $dt[idpengajuan]?>"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                              </ul>
+                                            </div>
                                             		</td>
                                             	</tr>
-
-                                            	<!--modal-->
-                                            	<div class="col-lg-12">
-                        <div class="modal fade" id="buttonedModal" tabindex="-1" role="dialog">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="H1">Modal title</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="img_objekwisata/<?php echo $dt[foto] ?>" alt="Project Name"><hr>
-                                            <p class="text-center">a</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
 
                     <?php $no++; } ?>
                                 </tbody>
@@ -112,7 +99,6 @@ $showPage = $page;
         </div>
     </div>
 
-    
-
 	</div>
 </div>
+

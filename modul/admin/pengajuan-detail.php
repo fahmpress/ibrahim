@@ -52,7 +52,7 @@ $data=mysql_fetch_array($q);
                                         </div>
                                         <div class="form-group">
                                             <label>Deskripsi</label>
-                                            <textarea name="ket" class="form-control" type="text" readonly><?php echo $data[deskripsi]?></textarea>
+                                            <textarea name="ket" class="form-control" type="text" rows="6" readonly><?php echo $data[deskripsi]?></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Kategori</label>
