@@ -7,7 +7,6 @@ include "../../config/fungsi_thumb.php";
 
 $module = $_GET['module'];
 $act    = $_GET['act'];
-$iduser = $_SESSION['id'];
 $waktu=date("Y-m-d | h:i:sa");
 $idbayar= uniqid();
 
@@ -92,9 +91,9 @@ if($module=='adm' AND $act=='user-delete' ){
 	} else {
 }
 
-if($module=='user' AND $act=='user-edit' ){ 
-  	mysql_query("update tbuser set alamat='$_POST[required2]', email='$_POST[email2]', nope='$_POST[digits]' where iduser='$_GET[iduser]'");
-	header('location:../../index.php?module=profile&echo=berhasil');
+if($module=='adm' AND $act=='user-edit' ){ 
+  	mysql_query("update tbuser set nama_user='$_POST[namauser]', email='$_POST[email2]', nope='$_POST[digits]' where iduser='$_GET[iduser]'");
+	header('location:../../index-admin.php?module=data-user');
 	} else {
 
 }

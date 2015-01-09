@@ -19,7 +19,7 @@ $echo=$_GET['echo'];
 		<div class="row">
 	    	<div class="col-sm-6">
 	    				
-									<form role="form" method="post" action="modul/admin/proses.php?module=user&act=edit&iduser=<?php echo $dt[iduser] ?>" enctype='multipart/form-data' class='f-r' id="block-validate">
+									<form role="form" method="post" action="modul/admin/proses.php?module=adm&act=user-edit&iduser=<?php echo $dt[iduser] ?>" enctype='multipart/form-data' class='f-r' id="block-validate">
 
 									<div class="fileupload fileupload-new" data-provides="fileupload">
                                 	<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="img_user/medium_<?php echo $dt[foto] ?>" alt="" /></div>
@@ -37,7 +37,7 @@ $echo=$_GET['echo'];
 
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Nama</b></label>
-										<input value="<?php echo $dt[nama_user] ?>" class="form-control" type="text" placeholder="" >
+										<input name="namauser" value="<?php echo $dt[nama_user] ?>" class="form-control" type="text" placeholder="" >
                                     </div>
 
                                     <div class="form-group">
