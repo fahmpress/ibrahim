@@ -19,6 +19,8 @@ include "timeout.php";
         <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css" />
+
+        <link rel="stylesheet" href="assets/plugins/validationengine/css/validationEngine.jquery.css" />
     </head>
     <body class="padTop53 " >
         <div id="wrap">
@@ -103,22 +105,8 @@ include "timeout.php";
                         <i class="fa fa-file-text"></i> Pengajuan
                     </a>                   
                 </li>
-                
-                <li><a href="#"><i class="fa fa-bar-chart-o"></i> Statistik </a></li>
                 <li><a href="#"><i class="fa fa-print"></i> Laporan </a></li>
-                <li class="panel ">
-                <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
-                    <i class="fa fa-gear"> </i> Setting     
-                        <span class="pull-right">
-                            <i class="icon-angle-left"></i>
-                        </span>
-                       &nbsp; <span class="label label-default"></span>&nbsp;
-                </a>
-                    <ul class="collapse" id="component-nav">
-                        <li class=""><a href="#"> Akun </a></li>
-                        <li class=""><a href="#"> Password </a></li>
-                    </ul>
-                </li>
+                <li><a href="index-admin.php?module=edit-akun"><i class="fa fa-gear"></i> Akun </a></li>
             </ul> 
             <?php } ?>
     </div>
@@ -136,10 +124,19 @@ include "timeout.php";
     <!--END FOOTER -->
     <!-- Script bs-admin-bcore  -->
         <!-- Javascripts -->
+    <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="assets/plugins/jquery-2.0.3.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
+
+    <script src="assets/plugins/validationengine/js/jquery.validationEngine.js"></script>
+        <script src="assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js"></script>
+        <script src="assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>
+        <script src="assets/js/validationInit.js"></script>
+        <script>
+        $(function () { formValidation(); });
+        </script>
 </body>
 </html>
 

@@ -74,7 +74,11 @@ $data=mysql_fetch_array($q);
                                             <label>Waktu Pengajuan</label>
                                             <input value="<?php echo $data[waktu_pengajuan]?>" class="form-control" placeholder="" readonly>
                                         </div>
-                                        <!--<button type="submit" class="btn btn-gradien btn-info"><i class="fa fa-check fa-lg"></i> Approve Pengajuan</button>-->
+                                        <div class="form-group">
+                                            <label>Validasi</label>
+                                            <input value="<?php echo $data[keterangan]?>" class="form-control" placeholder="" readonly>
+                                        </div>
+                                        <a href="index-admin.php?module=adm" class="btn btn-info"><i class="fa fa-mail-reply"></i> Kembali</a>
             			             </form>
                                 </div>
                             </div>

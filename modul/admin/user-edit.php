@@ -32,7 +32,7 @@ $echo=$_GET['echo'];
 
                             		<div class="form-group">
 		        				 		<label for="register-username"><b>ID User</b></label>
-										<input value="<?php echo $dt[iduser] ?>" class="form-control" type="text" placeholder="" >
+										<input name="id" value="<?php echo $dt[iduser] ?>" class="form-control" type="text" placeholder="" >
                                     </div>
 
                                     <div class="form-group">
@@ -42,43 +42,43 @@ $echo=$_GET['echo'];
 
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Umur</b></label>
-										<input value="<?php echo $dt[umur] ?>" class="form-control" type="text" placeholder="" >
+										<input name="umur" value="<?php echo $dt[umur] ?>" class="form-control" type="text" placeholder="" >
                                     </div>
 
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Gender</b></label>
-										<input value="<?php echo $dt[jk] ?>" class="form-control" type="text" placeholder="" >
+										<input name="jk" value="<?php echo $dt[jk] ?>" class="form-control" type="text" placeholder="" >
                                     </div>
 
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Alamat</b></label>
-										<input value="<?php echo $dt[alamat] ?>" class="form-control" type="text" id="required2" name="required2">
+										<input name="alamat" value="<?php echo $dt[alamat] ?>" class="form-control" type="text" id="required2" name="required2">
                                     </div>
 
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Email</b></label>
-										<input value="<?php echo $dt[email] ?>" class="form-control" type="email" id="email2" name="email2">
+										<input name="email" value="<?php echo $dt[email] ?>" class="form-control" type="email" id="email2" name="email2">
                                     </div>
 									<div class="form-group">
 		        				 		<label for="register-username"><b>No. HP</b></label>
-										<input value="<?php echo $dt[nope] ?>" class="form-control" type="text" id="digits" name="digits">
+										<input name="nope" value="<?php echo $dt[nope] ?>" class="form-control" type="text" id="digits" name="digits">
                                     </div>
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Usernmae</b></label>
-										<input value="<?php echo $dt[username] ?>" class="form-control" type="text" id="digits" name="digits">
+										<input name="username" value="<?php echo $dt[username] ?>" class="form-control" type="text" id="digits" name="digits">
                                     </div>
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Password</b></label>
-										<input value="<?php echo $dt[password] ?>" class="form-control" type="text" id="digits" name="digits">
+										<input name="password" value="<?php echo $dt[password] ?>" class="form-control" type="text" id="digits" name="digits">
                                     </div>
                                     <div class="form-group">
 		        				 		<label for="register-username"><b>Level</b></label>
-										<input value="<?php echo $dt[level] ?>" class="form-control" type="text" id="digits" name="digits">
+										<input name="level" value="<?php echo $dt[level] ?>" class="form-control" type="text" id="digits" name="digits">
                                     </div>
                                     
 
                                     <div class="form-group">
-										<button type="submit" class="btn pull-left">Perbaharui</button>
+										<button type="submit" class="btn btn-info"><i class="fa fa-edit"></i> Perbaharui</button>
 										<div class="clearfix"></div>
 									</div>
 								</form>	

@@ -1,20 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 2.11.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 28, 2014 at 03:20 PM
--- Server version: 5.5.39
--- PHP Version: 5.4.31
+-- Generation Time: Jan 11, 2015 at 02:05 AM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.5
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 --
 -- Database: `dbsisfowisata`
@@ -31,8 +24,9 @@ CREATE TABLE IF NOT EXISTS `tbbayar` (
   `idpengajuan` int(30) NOT NULL,
   `tgl_pembayaran` varchar(20) NOT NULL,
   `rek_user` varchar(50) NOT NULL,
-  `konfirm_admin` varchar(20) NOT NULL DEFAULT 'Pending'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `konfirm_admin` varchar(20) NOT NULL default 'Pending',
+  PRIMARY KEY  (`idbayar`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbbayar`
@@ -40,7 +34,8 @@ CREATE TABLE IF NOT EXISTS `tbbayar` (
 
 INSERT INTO `tbbayar` (`idbayar`, `idpengajuan`, `tgl_pembayaran`, `rek_user`, `konfirm_admin`) VALUES
 ('54971d55205e7', 10000023, '11-12-2014', 'Bank BRI No. Rek 100010101 a/n Aim Ibrahim', 'Lunas'),
-('549ffb18e3d7c', 10000036, '2014-12-24', 'Bank BJB No. Rek. 123456789 a/n Aim Sajah', 'Pending');
+('549ffb18e3d7c', 10000036, '2014-12-24', 'Bank BJB No. Rek. 123456789 a/n Aim Sajah', 'Lunas'),
+('54afc7f76775c', 10000037, '12/12/2014', 'asd', 'Lunas');
 
 -- --------------------------------------------------------
 
@@ -49,24 +44,26 @@ INSERT INTO `tbbayar` (`idbayar`, `idpengajuan`, `tgl_pembayaran`, `rek_user`, `
 --
 
 CREATE TABLE IF NOT EXISTS `tbfasilitas` (
-  `idfasilitas` int(20) NOT NULL,
+  `idfasilitas` int(20) NOT NULL auto_increment,
   `idpengajuan` int(30) NOT NULL,
   `fasilitas` varchar(100) NOT NULL,
   `ket_fasilitas` text NOT NULL,
-  `foto` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `foto` varchar(100) NOT NULL,
+  PRIMARY KEY  (`idfasilitas`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
 
 --
 -- Dumping data for table `tbfasilitas`
 --
 
 INSERT INTO `tbfasilitas` (`idfasilitas`, `idpengajuan`, `fasilitas`, `ket_fasilitas`, `foto`) VALUES
-(2147483647, 10000023, 'a', 'bb', '953700'),
-(2147483647, 10000023, 'bb', 'b', ''),
-(2147483647, 10000023, 'cc', 'c', ''),
-(2147483647, 10000023, 'dd', 'd', ''),
-(2147483647, 10000023, 'gg', 'g', ''),
-(2147483647, 10000023, 'hh', 'h', '');
+(54, 10000023, 'a', 'a', '210449'),
+(56, 10000023, 'c', 'c', '22888'),
+(57, 10000023, 'd', 'd', '902801'),
+(58, 10000023, 'e', 'e', '14434'),
+(59, 10000023, 'f', 'f', '184509'),
+(60, 10000023, 'g', 'g', '769500'),
+(61, 10000036, 'admin', 'a', '642944');
 
 -- --------------------------------------------------------
 
@@ -76,7 +73,8 @@ INSERT INTO `tbfasilitas` (`idfasilitas`, `idpengajuan`, `fasilitas`, `ket_fasil
 
 CREATE TABLE IF NOT EXISTS `tbkategori` (
   `idkategori` varchar(5) NOT NULL,
-  `nama_kategori` varchar(100) NOT NULL
+  `nama_kategori` varchar(100) NOT NULL,
+  PRIMARY KEY  (`idkategori`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -84,11 +82,11 @@ CREATE TABLE IF NOT EXISTS `tbkategori` (
 --
 
 INSERT INTO `tbkategori` (`idkategori`, `nama_kategori`) VALUES
-('K001', 'Budaya'),
 ('K002', 'Maritim atau Bahari'),
 ('K003', 'Cagar Alam'),
 ('K004', 'Kuliner'),
-('K005', 'Pertanian atau Agrowisata');
+('K005', 'Pertanian dan Agrowisata'),
+('K001', 'Budaya');
 
 -- --------------------------------------------------------
 
@@ -101,7 +99,8 @@ CREATE TABLE IF NOT EXISTS `tbpaket` (
   `nama_paket` varchar(20) NOT NULL,
   `harga` int(20) NOT NULL,
   `tayang` varchar(20) NOT NULL,
-  `galery` int(5) NOT NULL
+  `galery` int(5) NOT NULL,
+  PRIMARY KEY  (`idpaket`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -121,19 +120,20 @@ INSERT INTO `tbpaket` (`idpaket`, `nama_paket`, `harga`, `tayang`, `galery`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `tbpengajuan` (
-`idpengajuan` int(30) NOT NULL,
+  `idpengajuan` int(30) NOT NULL auto_increment,
   `iduser` int(10) NOT NULL,
   `nama_wisata` varchar(100) NOT NULL,
   `idkategori` varchar(10) NOT NULL,
   `alamat_wisata` text NOT NULL,
   `foto` varchar(100) NOT NULL,
   `deskripsi` text NOT NULL,
-  `status` varchar(20) NOT NULL DEFAULT 'Pending',
+  `status` varchar(20) NOT NULL default 'Pending',
   `keterangan` varchar(100) NOT NULL,
   `idpaket` varchar(5) NOT NULL,
-  `waktu_pengajuan` varchar(20) NOT NULL DEFAULT '-',
-  `waktu_penerimaan` varchar(20) NOT NULL DEFAULT '-',
-  `rating` int(10) NOT NULL
+  `waktu_pengajuan` varchar(20) NOT NULL default '-',
+  `waktu_penerimaan` varchar(20) NOT NULL default '-',
+  `rating` int(10) NOT NULL,
+  PRIMARY KEY  (`idpengajuan`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10000041 ;
 
 --
@@ -142,10 +142,10 @@ CREATE TABLE IF NOT EXISTS `tbpengajuan` (
 
 INSERT INTO `tbpengajuan` (`idpengajuan`, `iduser`, `nama_wisata`, `idkategori`, `alamat_wisata`, `foto`, `deskripsi`, `status`, `keterangan`, `idpaket`, `waktu_pengajuan`, `waktu_penerimaan`, `rating`) VALUES
 (10000023, 10020, 'Curug Bibijilan', 'K002', 'Nyalindung Kabupaten Sukabumi', '613674Curug-Cicurug-Tempat-Wisata-di-Sukabumi.jpg', 'Air Terjun Bibijilan berada di kawasan wisata Buni Ayu dan memiliki ketinggian sekitar 100 m dengan airnya yang dingin dan sejuk berwarna hijau tosca meluncur dari bebatuan kapur.  Air terjun ini bertingkat-tingkat dan setiap tingkatannya dapat didaki hingga puncaknya. ', 'Aktif', '', 'P002', '2014-12-20 | 07:37:1', '2014-12-27 | 12:01:2', 0),
-(10000033, 10027, 'Curug Cikondang', 'K001', 'Sukabumi Selatan teuing mana', '426309aItp15XTT5.jpg', 'Curug Cikondang ini sangat indah, apalagi kalo datang sama pacar', 'Pending', '', 'P002', '2014-12-20 | 12:46:0', '-', 0),
-(10000036, 10020, 'Riam Jeram', 'K002', 'Warung Kiara', '737917img_20111215091149_4ee9576585800.jpg', 'Anda Suka Olah Raga Adrenalin?', 'Pembayaran', '', 'P002', '2014-12-20 | 08:26:1', '-', 0),
-(10000037, 10020, 'Goa Angker', 'K003', 'Tempat Angker', '482844adventure_buniayu.jpg', 'Wisata bagi yang suka horror :D', 'Approve', '', 'P002', '2014-12-20 | 08:26:5', '-', 0),
-(10000038, 10020, 'Pelabuhan Ratu', 'K004', '', '45041922399cf8623aecb969d50ec32f760865_pelabuhan-ratu.jpg', '', 'Pending', '', 'P002', '2014-12-20 | 08:27:1', '-', 0),
+(10000033, 10027, 'Curug Cikondang', 'K001', 'Sukabumi Selatan teuing mana', '426309aItp15XTT5.jpg', 'Curug Cikondang ini sangat indah, apalagi kalo datang sama pacar', 'Pending', 'acc pengajuan ini', 'P002', '2014-12-20 | 12:46:0', '-', 0),
+(10000036, 10020, 'Riam Jeram', 'K002', 'Warung Kiara', '737917img_20111215091149_4ee9576585800.jpg', 'Anda Suka Olah Raga Adrenalin?', 'Aktif', '', 'P002', '2014-12-20 | 08:26:1', '2015-01-10 | 03:32:4', 0),
+(10000037, 10020, 'Goa Angker', 'K003', 'Tempat Angker', '482844adventure_buniayu.jpg', 'Wisata bagi yang suka horror :D', 'Aktif', '', 'P002', '2014-12-20 | 08:26:5', '2015-01-10 | 03:32:5', 0),
+(10000038, 10020, 'Pelabuhan Ratu', 'K004', '', '45041922399cf8623aecb969d50ec32f760865_pelabuhan-ratu.jpg', '', 'Approve', 'Validate', 'P002', '2014-12-20 | 08:27:1', '-', 0),
 (10000039, 10020, 'Cibangban', 'K002', '', '736788Kota pelabuhan ratu.JPG', '', 'Pending', '', 'P003', '2014-12-20 | 08:27:5', '-', 0);
 
 -- --------------------------------------------------------
@@ -155,7 +155,7 @@ INSERT INTO `tbpengajuan` (`idpengajuan`, `iduser`, `nama_wisata`, `idkategori`,
 --
 
 CREATE TABLE IF NOT EXISTS `tbuser` (
-`iduser` int(10) NOT NULL,
+  `iduser` int(10) NOT NULL auto_increment,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `nama_user` varchar(50) NOT NULL,
@@ -165,7 +165,8 @@ CREATE TABLE IF NOT EXISTS `tbuser` (
   `email` varchar(50) NOT NULL,
   `nope` varchar(16) NOT NULL,
   `foto` varchar(200) NOT NULL,
-  `level` varchar(10) NOT NULL DEFAULT '3'
+  `level` varchar(10) NOT NULL default '3',
+  PRIMARY KEY  (`iduser`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10031 ;
 
 --
@@ -173,62 +174,9 @@ CREATE TABLE IF NOT EXISTS `tbuser` (
 --
 
 INSERT INTO `tbuser` (`iduser`, `username`, `password`, `nama_user`, `umur`, `jk`, `alamat`, `email`, `nope`, `foto`, `level`) VALUES
-(10001, 'admin', 'admin', 'Ibrahim', '', '', '', '', '', '646615hd_wallpaper_6552.jpg', '1'),
-(10002, 'auditor', 'auditor', 'Kepala Dinas Pariwisata', '', '', '', '', '', '', '2'),
-(10003, 'user', 'user', 'Guest', '', '', '', '', '', '', '3'),
+(10001, 'admin', 'admin', 'Admin', '', '', '', '', '', '646615hd_wallpaper_6552.jpg', '1'),
+(10002, 'auditor', 'auditor', 'Dinas', '45', 'Laki-laki', 'Sukabumi', 'test@email.com', '4', '130859Pusing Pengen Nikah.jpg', '2'),
+(10003, 'user', 'user', 'test', '', '', '', '', '', '', '3'),
 (10027, 'abah', '12345', 'Abah Fikri', '23', 'Laki-laki', 'Sukabumi', 'abah@yahoo.com', '089', '353014Screenshot from 2014-12-16 01:23:35.png', '3'),
-(10026, 'test', '', '', '', '', '', '', '', '', '3'),
 (10021, 'steward', '12345', 'Cristen Steward', '24', 'Perempuan', 'Paris - UK', 'csteward@gmail.com', '0857-1-1-1', '534124hd_wallpaper_6552.jpg', '3'),
 (10020, 'ibrahim', 'ibrahim', 'Aim Ibrahim', '23', 'Laki-laki', 'cimangkok deukeut cianyur', 'ibrakadabra@gmail.com', '0857', '593614aim.jpg', '3');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbbayar`
---
-ALTER TABLE `tbbayar`
- ADD PRIMARY KEY (`idbayar`);
-
---
--- Indexes for table `tbkategori`
---
-ALTER TABLE `tbkategori`
- ADD PRIMARY KEY (`idkategori`);
-
---
--- Indexes for table `tbpaket`
---
-ALTER TABLE `tbpaket`
- ADD PRIMARY KEY (`idpaket`);
-
---
--- Indexes for table `tbpengajuan`
---
-ALTER TABLE `tbpengajuan`
- ADD PRIMARY KEY (`idpengajuan`);
-
---
--- Indexes for table `tbuser`
---
-ALTER TABLE `tbuser`
- ADD PRIMARY KEY (`iduser`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbpengajuan`
---
-ALTER TABLE `tbpengajuan`
-MODIFY `idpengajuan` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10000041;
---
--- AUTO_INCREMENT for table `tbuser`
---
-ALTER TABLE `tbuser`
-MODIFY `iduser` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10031;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

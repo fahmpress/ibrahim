@@ -23,7 +23,7 @@ $dt=mysql_fetch_array($q);
 	    		<?php if($dt[jum]==6) { ?>
 	    		<div class="alert alert-success alert-dismissable">
                     	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    	Galery anda telah limit. 
+                    	Galery anda telah limit. <a href="index.php?module=galery" class="alert-link">Delete </a>sebagian galery.
                     	</div>
 	    		<?php } else { ?>
 				<div class="row">

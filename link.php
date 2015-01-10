@@ -61,6 +61,12 @@ include "config/fungsi_nip.php";
                 else if($_GET['module']=="laporan"){
                 include "laporan.php";
                 }
+                    else if($_GET['module']=="pengajuan-detail"){
+                    include "modul/auditor/pengajuan-detail.php";
+                    }
+                        else if($_GET['module']=="edit-akun"){
+                        include "modul/auditor/edit-akun.php";
+                        }
                     
         }
  
@@ -113,6 +119,9 @@ include "config/fungsi_nip.php";
                                                                     else if($_GET['module']=="passwd"){
                                                                     include "modul/user/ganti-pass.php";
                                                                     }
+                                                                        else if($_GET['module']=="galery"){
+                                                                        include "modul/user/galery.php";
+                                                                        }
                      
                      
                      

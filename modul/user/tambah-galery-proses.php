@@ -14,7 +14,6 @@ include "index.php?module=login";
 $module=$_GET['module'];
 $act=$_GET['act'];
 $idpengajuan=$_GET['idpengajuan'];
-$id= uniqid();
 
 if($module=='user' AND $act=='add' ){
   $lokasi_file    = $_FILES['fupload']['tmp_name'];
@@ -25,11 +24,11 @@ if($module=='user' AND $act=='add' ){
   $nama_file_unik = $acak.$nama_file;
 	if (!empty($lokasi_file)){  
 	Uploadfoto($nama_file_unik);
-	mysql_query("insert into tbfasilitas set idfasilitas='$id', idpengajuan='$idpengajuan', fasilitas='$_POST[required2]', ket_fasilitas='$_POST[ket]', foto='$nama_file_unik'");
+	mysql_query("insert into tbfasilitas set idpengajuan='$idpengajuan', fasilitas='$_POST[required2]', ket_fasilitas='$_POST[ket]', foto='$nama_file_unik'");
 	
 	header('location:../../index.php?module=status&echo=berhasil');
 	} else {
-            mysql_query("insert into tbfasilitas set idfasilitas='$id', idpengajuan='$idpengajuan', fasilitas='$_POST[required2]', ket_fasilitas='$_POST[ket]'");
+            mysql_query("insert into tbfasilitas set idpengajuan='$idpengajuan', fasilitas='$_POST[required2]', ket_fasilitas='$_POST[ket]'");
         header('location:../../index.php?module=status&echo=berhasil');
 }
 }

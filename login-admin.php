@@ -6,7 +6,7 @@
 <!-- BEGIN HEAD -->
 <head>
      <meta charset="UTF-8" />
-    <title>BCORE Admin Dashboard Template | Login Page</title>
+    <title>Login admin</title>
     <link rel="shortcut icon" href="img/logosmi.png" >
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />

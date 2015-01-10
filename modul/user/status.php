@@ -21,7 +21,7 @@ $echo=$_GET['echo'];
                     	if($echo=='berhasil'){ ?>
                     	<div class="alert alert-success alert-dismissable">
                     	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    	Galery berhasil ditambah. <a href="index.php?module=objeklist" class="alert-link">Lihat</a>.
+                    	Galery berhasil ditambah. <a href="index.php?module=galery" class="alert-link">Lihat</a>.
                     	</div>
                     	<?php } ?>
 

@@ -92,8 +92,79 @@ if($module=='adm' AND $act=='user-delete' ){
 }
 
 if($module=='adm' AND $act=='user-edit' ){ 
-  	mysql_query("update tbuser set nama_user='$_POST[namauser]', email='$_POST[email2]', nope='$_POST[digits]' where iduser='$_GET[iduser]'");
+  $lokasi_file    = $_FILES['fupload']['tmp_name'];
+  $tipe_file      = $_FILES['fupload']['type'];
+  $nama_file      = $_FILES['fupload']['name'];
+  $acak           = rand(000000,999999);
+  $nama_file_unik = $acak.$nama_file;
+	if (!empty($lokasi_file)){  
+	$tll="$_POST[tahun]-$_POST[bulan]-$_POST[hari]";
+	$tm="$_POST[tm]-$_POST[bm]-$_POST[hm]";
+	Uploadfoto($nama_file_unik);
+  	mysql_query("update tbuser set iduser='$_POST[id]', username='$_POST[username]',
+										 password='$_POST[password]',
+										 nama_user='$_POST[namauser]',
+										 umur='$_POST[umur]',
+										 jk='$_POST[jk]',
+										 alamat='$_POST[alamat]',
+										 email='$_POST[email]',
+										 nope='$_POST[nope]',
+										 level='$_POST[level]',
+										 foto='$nama_file_unik' where iduser='$_GET[iduser]'");
 	header('location:../../index-admin.php?module=data-user');
+	} else {
+		mysql_query("update tbuser set iduser='$_POST[id]', username='$_POST[username]',
+										 password='$_POST[password]',
+										 nama_user='$_POST[namauser]',
+										 umur='$_POST[umur]',
+										 jk='$_POST[jk]',
+										 alamat='$_POST[alamat]',
+										 email='$_POST[email]',
+										 nope='$_POST[nope]',
+										 level='$_POST[level]' where iduser='$_GET[iduser]'");
+	header('location:../../index-admin.php?module=data-user');
+
+}
+}
+
+if($module=='adm' AND $act=='edit-kategori' ){ 
+  	mysql_query("update tbkategori set idkategori='$_POST[id]', nama_kategori='$_POST[nama]' where idkategori='$_GET[idktg]'");
+	header('location:../../index-admin.php?module=kategori');
+	} else {
+
+}
+
+if($module=='adm' AND $act=='delete-kategori' ){ 
+  	mysql_query("delete from tbkategori where idkategori='$_GET[idktg]'");
+	header('location:../../index-admin.php?module=kategori');
+	} else {
+
+}
+
+if($module=='adm' AND $act=='add-kategori' ){ 
+  	mysql_query("insert into tbkategori set idkategori='$_POST[id]', nama_kategori='$_POST[nama]'");
+	header('location:../../index-admin.php?module=kategori');
+	} else {
+
+}
+
+if($module=='adm' AND $act=='edit-paket' ){ 
+  	mysql_query("update tbpaket set idpaket='$_POST[id]', nama_paket='$_POST[nama]', harga='$_POST[harga]', tayang='$_POST[tayang]', galery='$_POST[galery]' where idpaket='$_GET[idpkt]'");
+	header('location:../../index-admin.php?module=kontrak');
+	} else {
+
+}
+
+if($module=='adm' AND $act=='delete-paket' ){ 
+  	mysql_query("delete from tbpaket where idpaket='$_GET[idpkt]'");
+	header('location:../../index-admin.php?module=kontrak');
+	} else {
+
+}
+
+if($module=='adm' AND $act=='add-paket' ){ 
+  	mysql_query("insert into tbpaket set idpaket='$_POST[id]', nama_paket='$_POST[nama]', harga='$_POST[harga]', tayang='$_POST[tayang]', galery='$_POST[galery]'");
+	header('location:../../index-admin.php?module=kontrak');
 	} else {
 
 }

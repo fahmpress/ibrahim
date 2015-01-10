@@ -113,19 +113,20 @@ include "timeout.php";
 									<div>
 										<h4>Pengajuan</h4>
 										<ul>
-                                                                                    <li><a href="index.php?module=status"><i class="fa fa-file-text"></i> Status</a></li>
+                                            <li><a href="index.php?module=status"><i class="fa fa-file-text"></i> Status</a></li>
 											<li><a href="index.php?module=tagihan"><i class="fa fa-shopping-cart"></i> Tagihan</a></li>
+                                            <li><a href="index.php?module=galery"><i class="fa fa-photo"></i> Galery</a></li>
 										</ul>
-                                                                        </div>
-                                                                        <div>
+                                    </div>
+                                    <div>
 										<h4>Akun</h4>
 										<ul>
-                                                                                    <li><a href="index.php?module=profile"><i class="fa fa-user"></i> Profile Saya</a></li>
+                                            <li><a href="index.php?module=profile"><i class="fa fa-user"></i> Profile Saya</a></li>
 											<li><a href="index.php?module=passwd"><i class="fa fa-unlock-alt"></i> Rubah Password</a></li>
 										</ul>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
 						</li>
                                                 
 					</ul>

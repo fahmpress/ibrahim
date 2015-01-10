@@ -9,16 +9,19 @@
                 <hr>
     <div class="container">             
         <div class="row">
-
+            <div class="col-lg-7">
+            <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Daftar Kategori</h4>
+                        </div>
+                        <div class="panel-body">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover"> 
                                             <thead>
                                                 <tr>
                                                     <th>ID Kategori</th>
                                                     <th>Nama</th>
-                                                    <th>
-                                                        <a href="#" class="btn btn-default btn-sm btn-grad btn-block"><i class="fa fa-plus-circle fa-lg"></i> Tambah Kategori</a>
-                                                    </th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -42,12 +45,11 @@
                                                     <td><?php echo $dt[nama_kategori]?></td>
                                                     <td class="text-center">
                                                     
-                                                    <a href="" class="btn btn-default btn-sm btn-grad" data-toogle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
-                                                    <a href="" class="btn btn-default btn-sm btn-grad" data-toogle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></a>
+                                                    <a href="#formModal<?php echo $dt[idkategori]?>" class="btn btn-default btn-sm btn-grad" data-toggle="modal" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                    <a href="modul/admin/proses.php?module=adm&act=delete-kategori&idktg=<?php echo $dt[idkategori] ?>" class="btn btn-default btn-sm btn-grad" data-toogle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></a>
                                                     </td>
                                                 </tr>
-
-                    <?php $no++; } ?>
+<?php $no++; } ?>
                                 </tbody>
                             </table>
                         </div> 
@@ -75,9 +77,69 @@ $showPage = $page;
 }
 }
                     ?>
+        </div></div></div>
+
+<div class="col-lg-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Tambah Kategori</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form role="form" method="post" action="modul/admin/proses.php?module=adm&act=add-kategori" id="block-validate" enctype='multipart/form-data' class='f-r'>
+                                <div class="form-group">
+                                    <label for="register-username"><i class="fa fa-anchor"></i> <b>ID Kategori</b></label>
+                                    <input class="form-control" name="id" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-username"><i class="fa fa-align-right"></i> <b>Nama Kategori</b></label>
+                                    <input class="form-control" name="nama" type="text" required>
+                                </div>
+                                <button type="submit" class="btn btn-info"><i class="fa fa-plus-circle fa-lg"></i> Tambah Kategori</button>
+                            </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         </div>
     </div>
 
     </div>
 </div>
+<?php $tampil=mysql_query("select * from tbkategori order by idkategori ASC LIMIT $offset, $dataPerPage");
+while($dt=mysql_fetch_array($tampil)){ ?>
+<div class="col-lg-12">
+<div class="modal fade" id="formModal<?php echo $dt[idkategori]?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="H2">Edit Kategori</h4>
+                                        </div>
+                                        <form method="post" action="modul/admin/proses.php?module=adm&act=edit-kategori&idktg=<?php echo $dt[idkategori] ?>">
+                                        <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>ID</label>
+                                            <input class="form-control" name="id" value="<?php echo $dt[idkategori]?>" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nama Kategori</label>
+                                            <input class="form-control" name="nama" value="<?php echo $dt[nama_kategori]?>"/>
+                                        </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-info"><i class="fa fa-pencil-square-o"></i> Perbaharui</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div></div>
+<?php } ?>
+<script>
+    $("#commentForm").validate();
+</script>
 
