@@ -67,6 +67,9 @@ include "config/fungsi_nip.php";
                         else if($_GET['module']=="edit-akun"){
                         include "modul/auditor/edit-akun.php";
                         }
+                            else if($_GET['module']=="laporan"){
+                            include "modul/auditor/laporan.php";
+                            }
                     
         }
  

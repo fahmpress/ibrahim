@@ -105,7 +105,20 @@ include "timeout.php";
                         <i class="fa fa-file-text"></i> Pengajuan
                     </a>                   
                 </li>
-                <li><a href="#"><i class="fa fa-print"></i> Laporan </a></li>
+                <li class="panel ">
+                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
+                        <i class="fa fa-print"></i> Laporan
+       
+                        <span class="pull-right">
+                            <i class="icon-angle-left"></i>
+                        </span>
+                    </a>
+                    <ul class="collapse" id="form-nav">
+                        <li class=""><a target="_blank" href="modul/auditor/laporan-pengajuan.php"><i class="icon-angle-right"></i> Pengajuan </a></li>
+                        <li class=""><a target="_blank" href="modul/auditor/laporan-keuangan.php"><i class="icon-angle-right"></i> Keuangan </a></li>
+                    </ul>
+                </li>
+
                 <li><a href="index-admin.php?module=edit-akun"><i class="fa fa-gear"></i> Akun </a></li>
             </ul> 
             <?php } ?>
@@ -113,6 +126,7 @@ include "timeout.php";
 
         <!--END MENU SECTION -->
         <!--PAGE CONTENT -->
+
     <?php include "link.php"; ?>
 
     </div><!--END MAIN WRAPPER -->
